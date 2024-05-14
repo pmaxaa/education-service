@@ -1,0 +1,46 @@
+@import "../../Style/generalStyle.scss";
+
+.questionDropDown {
+}
+
+.questionDropDown__question {
+  width: 100%;
+  background-color: $lavenderColor;
+  padding: 28px 90px 28px 32px;
+  border-radius: 16px;
+  @include h4;
+  &::after,
+  &::before {
+    content: "";
+    transition: all 0.3s linear;
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    top: 50%;
+    right: 30px;
+    transform: translate(-50%, -50%);
+    background-color: $darkGreyColor;
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+.questionDropDown__question_open {
+  &::after,
+  &::before {
+    height: 3px;
+  }
+  &::after {
+    transform: translate(-32%, -50%) scale(0.7) rotate(45deg);
+  }
+  &::before {
+    transform: translate(-78%, -50%) scale(0.7) rotate(-45deg);
+  }
+}
+
+.questionDropDown__answer {
+  width: 100%;
+  @include p2;
+  padding: 16px 36px 16px 32px;
+  color: $darkGreyColor;
+}
