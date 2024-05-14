@@ -7,6 +7,8 @@ type DropDownProps = {
   mainBlockParams?: React.HTMLAttributes<HTMLElement>;
   dropdownBlockSlot: React.ReactNode;
   dropdownBlockParams?: React.HTMLAttributes<HTMLElement>;
+  isClosedWhenLosesActivity?: boolean;
+  isOpeningWhenGetFocus?: boolean;
 } & (
   | {
       show: boolean;
@@ -25,6 +27,8 @@ export const DropDown = ({
   mainBlockParams,
   dropdownBlockSlot,
   dropdownBlockParams,
+  isClosedWhenLosesActivity,
+  isOpeningWhenGetFocus,
 }: DropDownProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [innerShow, setInnerShow] = useState<boolean>(
@@ -47,11 +51,15 @@ export const DropDown = ({
         setShow ? setShow(false) : setInnerShow(false);
       }
     };
-    document.addEventListener("click", onClickOutside);
-    document.addEventListener("focusin", onClickOutside);
+    if (isClosedWhenLosesActivity) {
+      document.addEventListener("click", onClickOutside);
+      document.addEventListener("focusin", onClickOutside);
+    }
     return () => {
-      document.removeEventListener("click", onClickOutside);
-      document.removeEventListener("focusin", onClickOutside);
+      if (isClosedWhenLosesActivity) {
+        document.removeEventListener("click", onClickOutside);
+        document.removeEventListener("focusin", onClickOutside);
+      }
     };
   }, []);
 
@@ -80,13 +88,15 @@ export const DropDown = ({
           }
         }}
         onFocusCapture={(e) => {
-          setFocus(true);
-          setTimeout(() => {
-            setFocus(false);
-          }, 500);
-          if (mainBlockParams?.onFocusCapture)
-            mainBlockParams.onFocusCapture(e);
-          setShow ? setShow(true) : setInnerShow(true);
+          if (isOpeningWhenGetFocus) {
+            setFocus(true);
+            setTimeout(() => {
+              setFocus(false);
+            }, 500);
+            if (mainBlockParams?.onFocusCapture)
+              mainBlockParams.onFocusCapture(e);
+            setShow ? setShow(true) : setInnerShow(true);
+          }
         }}
       >
         {mainBlockSlot}
