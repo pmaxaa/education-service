@@ -1,0 +1,33 @@
+@import "../../Style/generalStyle.scss";
+
+.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+}
+.input__title {
+  @include p7;
+  color: $blackColor;
+}
+.input__field {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid $greyColor;
+  @include p7;
+  padding: 16px 20px 18px;
+  outline: 0;
+  caret-color: $blueDefaultColor;
+  color: $blackColor;
+  &::placeholder {
+    color: $greyColor;
+  }
+  &:hover {
+    border-color: $darkGreyColor;
+  }
+  &:focus {
+    border-color: $lavenderColor;
+  }
+}
