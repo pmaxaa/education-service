@@ -1,0 +1,18 @@
+@import "../../Style/generalStyle.scss";
+
+.dropdown {
+  width: 100%;
+  position: relative;
+}
+.dropdown__mainBlockSlot {
+  width: 100%;
+  position: relative;
+}
+.dropdown__dropdownBlock {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: all 0.3s linear;
+}
