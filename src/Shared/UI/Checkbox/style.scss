@@ -1,0 +1,113 @@
+$default-color: white;
+$blue-color: #E3E6FF;
+$blue-hover-color: #BCC3FF;
+$lightest-gray: #F5F5F5;
+.bs-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 400px;
+    height: 100px;
+    padding-left: 50px;
+    transition: 0.3s;
+    &:hover{
+        background-color: $lightest-gray;
+        .bs-checkbox{
+            label{
+                &::after{
+                    background-color: $blue-hover-color;
+                }
+            }
+            .border-fake{
+                background-color: $lightest-gray;
+            }
+        }
+    }
+    &:active{
+        .bs-checkbox{
+            .border-fake{
+                background-color: $blue-hover-color;
+            }
+        }
+    }
+    .bs-icon{
+        position: relative;
+        margin-right: 20px;
+        svg{
+            position: absolute;
+            left: 0;
+            top: -25px;
+        }
+    }
+    .txt{
+        p{
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20.8px;
+            text-align: left;
+            margin: 0 0 8px;
+        }
+        span{
+            color: #797979;
+            font-family: Inter;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20.8px;
+            text-align: left;
+        }
+    }
+    .bs-checkbox{
+        input[type="checkbox"] {
+            appearance: none;
+            &:checked {
+                + label::after{
+                    transform: scale(1);
+                }
+            }
+        }
+        label{
+            position: relative;
+            cursor: pointer;
+            &::before{
+                content: "";
+                width: 14px;
+                height: 14px;
+                border: 2px solid #C9C9C9;
+                position: absolute;
+                left: -30px;
+                top: -15px;
+                border-radius: 4px;
+            }
+            &::after{
+                font-family: 'Courier New', Courier, monospace ;
+                content: "\2713";
+                font-weight: 900;
+                background-color: $blue-color;
+                color: white;
+                width: 18px;
+                height: 18px;
+                font-size: 12px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: scale(0) rotate(360deg);
+                transition: 0.3s;
+                position: absolute;
+                left: -30px;
+                top: -15px;
+                border-radius: 4px;
+            }
+        }
+        .border-fake{
+            width: 15px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: white;
+            transition: 0.3s;
+        }
+    }
+}
