@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./style.scss";
 import { Logo } from "../Logo/ui";
 import { DropDown } from "../DropDown/ui";
+import Button from "../../UI/Button/Button";
 
 interface HeaderTemplateProps {
   children: React.ReactNode | React.ReactNode[];
@@ -87,9 +88,14 @@ export const HeaderTemplate = ({
           />
         </svg>
       </button>
-      <a className="header__educationBtn" href="/">
-        Моё обучение
-      </a>
+      <Button
+        className="header__educationBtn"
+        href="/"
+        label="Моё обучение"
+        tag="a"
+        size="header"
+        theme="stroke"
+      />
       <DropDown
         className="header__notification"
         mainBlockSlot={
