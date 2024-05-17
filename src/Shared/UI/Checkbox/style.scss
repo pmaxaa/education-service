@@ -24,10 +24,22 @@ $lightest-gray: #F5F5F5;
             }
         }
     }
+    &:hover:active{
+        .bs-checkbox{
+            label{
+                &::after{
+                    background-color: $blue-hover-color;
+                }
+            }
+            .border-fake{
+                background-color: $blue-hover-color
+            }
+        }
+    }
     &:active{
         .bs-checkbox{
             .border-fake{
-                background-color: $blue-hover-color;
+                background-color: $blue-color;
             }
         }
     }
