@@ -1,16 +1,9 @@
 @import "../../../Shared/Style/generalStyle.scss";
 
 .footer {
-  width: 100%;
-  background-color: $blackColor;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 15px;
-}
-.footer__container {
+  background-color: $blackColor;
   width: 100%;
-  max-width: 1440px;
   display: grid;
   align-items: center;
   grid-template-columns: 40px 1fr 2fr;
@@ -60,7 +53,7 @@
 }
 
 @media (max-width: 768px) {
-  .footer__container {
+  .footer {
     grid-template-columns: 40px 1fr;
     grid-template-areas:
       "logo solial"

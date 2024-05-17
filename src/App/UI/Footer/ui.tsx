@@ -65,26 +65,24 @@ const socialItems: {
 export const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer__container">
-        <Logo className="footer__logo" />
-        <div className="footer__social">
-          <h2 className="footer__socialHeader">Мы в соцсетях</h2>
-          <ul className="footer__socialList">
-            {socialItems.map((item) => {
-              return (
-                <li key={item.name}>
-                  <a href={item.path} title={item.name}>
-                    {item.title}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="footer__companyInfo">
-          <p className="footer__copyright">© 2022–2024 Название</p>
-          <p className="footer__contacts">mailbox@mail.ru, адреса и телефоны</p>
-        </div>
+      <Logo className="footer__logo" />
+      <div className="footer__social">
+        <h2 className="footer__socialHeader">Мы в соцсетях</h2>
+        <ul className="footer__socialList">
+          {socialItems.map((item) => {
+            return (
+              <li key={item.name}>
+                <a href={item.path} title={item.name}>
+                  {item.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className="footer__companyInfo">
+        <p className="footer__copyright">© 2022–2024 Название</p>
+        <p className="footer__contacts">mailbox@mail.ru, адреса и телефоны</p>
       </div>
     </footer>
   );
