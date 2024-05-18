@@ -5,10 +5,12 @@ import { DropDown } from "../DropDown/ui";
 interface QuestionDropDownProps {
   question: string;
   answer: string;
+  theme?: "light" | "dark";
 }
 export const QuestionDropDown = ({
   question,
   answer,
+  theme = "light",
 }: QuestionDropDownProps) => {
   const [show, setShow] = useState<boolean>(false);
 
@@ -27,7 +29,7 @@ export const QuestionDropDown = ({
   );
   return (
     <DropDown
-      className="questionDropDown"
+      className={"questionDropDown" + (" questionDropDown_theme_" + theme)}
       show={show}
       setShow={setShow}
       mainBlockSlot={mainBlockSlot}

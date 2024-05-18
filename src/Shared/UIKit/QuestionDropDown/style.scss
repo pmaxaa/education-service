@@ -1,5 +1,18 @@
 @import "../../Style/generalStyle.scss";
 
+.questionDropDown_theme_dark {
+  .questionDropDown__question {
+    color: $whiteColor;
+    background-color: $darkestGreyColor;
+    &::after,
+    &::before {
+      background-color: $mediumGreyColor;
+    }
+  }
+  .questionDropDown__answer {
+    color: $mediumGreyColor;
+  }
+}
 .questionDropDown {
 }
 
