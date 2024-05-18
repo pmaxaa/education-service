@@ -10,6 +10,7 @@ interface CourseCardProps extends React.HTMLAttributes<HTMLElement> {
   idCourse: string;
   isLike: boolean;
   setIsLike: (v: boolean) => void;
+  theme?: "light" | "dark";
 }
 export const CourseCard = ({
   name,
@@ -19,12 +20,17 @@ export const CourseCard = ({
   idCourse,
   setIsLike,
   isSelected = false,
+  theme,
   ...props
 }: CourseCardProps) => {
   return (
     <article
       {...props}
-      className={"courseCard" + (className ? " " + className : "")}
+      className={
+        "courseCard" +
+        (" courseCard_theme_" + theme) +
+        (className ? " " + className : "")
+      }
     >
       <h3 className="courseCard__name">{name}</h3>
       <p className="courseCard__description">{description}</p>

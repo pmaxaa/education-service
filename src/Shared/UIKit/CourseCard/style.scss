@@ -39,3 +39,17 @@
   align-items: center;
   width: 100%;
 }
+
+.courseCard_theme_dark {
+  background-color: $blackColor;
+  border: 2px solid $darkestGreyColor;
+  &:hover {
+    background-color: $darkestGreyColor;
+  }
+  .courseCard__name {
+    color: $lightBlueColor;
+  }
+  .courseCard__description {
+    color: $whiteColor;
+  }
+}
