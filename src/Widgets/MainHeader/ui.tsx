@@ -7,8 +7,9 @@ interface MainHeaderProps {
   onClickCategory?: (v: string) => void;
   textFilter?: string;
   setTextFilter?: (v: string) => void;
+  setTheme?: (v: "light" | "dark") => void;
 }
-export const MainHeader = ({ ...props }: MainHeaderProps) => {
+export const MainHeader = ({ setTheme, ...props }: MainHeaderProps) => {
   // Здесь нужно получить все категории(направления или теги) из стейта. Пока заполнен от руки
   const allCategories = [
     "Все курсы",
@@ -29,7 +30,7 @@ export const MainHeader = ({ ...props }: MainHeaderProps) => {
     "Другое",
   ];
   return (
-    <HeaderTemplate>
+    <HeaderTemplate theme={props.theme} setTheme={setTheme}>
       <SearchDropDown allCategories={allCategories} {...props} />
     </HeaderTemplate>
   );
