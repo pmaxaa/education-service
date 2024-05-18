@@ -6,6 +6,7 @@ interface TeacherCardProps extends React.HTMLAttributes<HTMLElement> {
   imgUrl?: string;
   description: string;
   direction: string;
+  theme?: "light" | "dark";
 }
 export const TeacherCard = ({
   name,
@@ -13,6 +14,7 @@ export const TeacherCard = ({
   description,
   direction,
   className,
+  theme = "light",
   ...props
 }: TeacherCardProps) => {
   const [widthImg, setWidthImg] = useState<number>(440);
@@ -29,7 +31,11 @@ export const TeacherCard = ({
   return (
     <article
       {...props}
-      className={"teacherCard" + (className ? " " + className : "")}
+      className={
+        "teacherCard" +
+        (" teacherCard_theme_" + theme) +
+        (className ? " " + className : "")
+      }
     >
       <div className="teacherCard__direction">{direction}</div>
       {imgUrl ? (

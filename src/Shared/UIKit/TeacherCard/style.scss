@@ -1,5 +1,28 @@
 @import "../../Style/generalStyle.scss";
 
+.teacherCard_theme_dark {
+  .teacherCard__direction {
+    background-color: $blackColor;
+    color: $whiteColor;
+  }
+  .teacherCard__img {
+    background-color: $darkestGreyColor;
+  }
+  .teacherCard__noImg {
+    background-color: $darkGreyColor;
+    color: $mediumGreyColor;
+  }
+  .teacherCard__name {
+    color: $lightBlueColor;
+  }
+  .teacherCard__description {
+    color: $whiteColor;
+  }
+  .teacherCard__detailsBtn {
+    color: $mediumGreyColor;
+  }
+}
+
 .teacherCard {
   width: 100%;
   max-width: 440px;
@@ -70,6 +93,7 @@
   justify-content: start;
 }
 .teacherCard__detailsBtn {
+  cursor: pointer;
   color: $darkGreyColor;
   text-decoration: none;
   border: 0;
