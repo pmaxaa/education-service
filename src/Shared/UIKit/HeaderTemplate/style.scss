@@ -1,5 +1,13 @@
 @import "../../Style/generalStyle.scss";
 
+.header_theme_dark {
+  background-color: $blackColor;
+  color: $whiteColor;
+  * {
+    background-color: $blackColor;
+    color: $whiteColor;
+  }
+}
 .header {
   width: 100%;
   display: grid;

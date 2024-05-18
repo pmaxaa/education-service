@@ -8,10 +8,12 @@ import Button from "../../UI/Button/Button";
 interface HeaderTemplateProps {
   children: React.ReactNode | React.ReactNode[];
   theme?: "light" | "dark";
+  setTheme?: (v: "light" | "dark") => void;
   isWithMenu?: boolean;
 }
 export const HeaderTemplate = ({
   theme = "light",
+  setTheme,
   children,
   isWithMenu = true,
 }: HeaderTemplateProps) => {
@@ -34,7 +36,13 @@ export const HeaderTemplate = ({
     },
   ];
   return (
-    <header className={"header" + (!isWithMenu ? " header_withoutMenu" : "")}>
+    <header
+      className={
+        "header" +
+        (!isWithMenu ? " header_withoutMenu" : "") +
+        (" header_theme_" + theme)
+      }
+    >
       <button
         type="button"
         className={
@@ -46,7 +54,7 @@ export const HeaderTemplate = ({
         Open/close nav menu
       </button>
       <NavLink className={"header__logo"} to={"/"}>
-        <Logo color="white" />
+        <Logo color={theme === "light" ? "white" : "rgba(51, 51, 51, 1)"} />
       </NavLink>
       {isWithMenu && (
         <nav
@@ -69,11 +77,11 @@ export const HeaderTemplate = ({
       )}
       <div className="header__slot">{children}</div>
       <button
-        className={
-          "header__themeBtn" +
-          (theme === "dark" ? " header__themeBtn_dark" : "")
-        }
+        className={"header__themeBtn"}
         type="button"
+        onClick={() => {
+          if (setTheme) setTheme(theme === "dark" ? "light" : "dark");
+        }}
       >
         <svg
           width="20"
