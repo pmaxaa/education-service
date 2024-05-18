@@ -1,9 +1,8 @@
 import React from "react"
 import './style.scss'
 
-interface CheckboxProps{
+interface LessonProps{
     name: string,
-    time: string,
     id: string
 }
 function Lesson({

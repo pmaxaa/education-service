@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import { Checkbox, Lesson, MyVideo } from "./Shared";
+import { Checkbox, FilterChosen, Lesson, MyVideo } from "./Shared";
 
 function App() {
   return (
@@ -10,7 +10,8 @@ function App() {
       {/* <MyVideo LinkVideo='https://vk.com/video_ext.php?oid=-219407444&id=456239041&hd=2'/> */}
       {/* <MyVideo LinkVideo='https://rutube.ru/video/f661e71761b22ff66aaa1255c567337e/?r=wd'/> */}
       {/* <Checkbox/> */}
-      <Lesson/>
+      {/* <Lesson/> */}
+      <FilterChosen/>
     </div>
   );
 }
