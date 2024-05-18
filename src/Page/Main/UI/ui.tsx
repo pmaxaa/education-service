@@ -1,5 +1,11 @@
 import React from "react";
+import { MainHeader } from "../../../Widgets/MainHeader/ui";
 
 export const MainPage = () => {
-  return <main>MainPage</main>;
+  return (
+    <>
+      <MainHeader />
+      <main></main>;
+    </>
+  );
 };

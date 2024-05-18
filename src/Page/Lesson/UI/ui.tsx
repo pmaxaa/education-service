@@ -9,5 +9,9 @@ export const lessonLoader = ({ params }: LoaderFunctionArgs<lessonParams>) => {
 };
 export const LessonPage = () => {
   const { id } = useLoaderData() as lessonParams;
-  return <main>LessonPage {id}</main>;
+  return (
+    <>
+      <main>LessonPage {id}</main>;
+    </>
+  );
 };

@@ -33,7 +33,10 @@ export const SearchDropDown = ({
     if (setTextFilter) setTextFilter(InnerTextFilter);
 
     const coincidenceCategory = allCategories.find((category) => {
-      return category === InnerTextFilter;
+      return (
+        category.toLocaleLowerCase().trim() ===
+        InnerTextFilter.toLocaleLowerCase().trim()
+      );
     });
     const navigateState: { textFilter: string; category?: string } = {
       textFilter: InnerTextFilter,
@@ -73,7 +76,12 @@ export const SearchDropDown = ({
           <li key={category} className="searchDropDown__categoryItem">
             {location.pathname === "/catalog" ? (
               <Button
-                theme={InnerTextFilter === category ? "filled" : "stroke"}
+                theme={
+                  InnerTextFilter.toLocaleLowerCase().trim() ===
+                  category.toLocaleLowerCase().trim()
+                    ? "filled"
+                    : "stroke"
+                }
                 label={category}
                 size="search"
                 onClick={() => {
@@ -91,7 +99,12 @@ export const SearchDropDown = ({
                 <Button
                   label={category}
                   size="search"
-                  theme={InnerTextFilter === category ? "filled" : "stroke"}
+                  theme={
+                    InnerTextFilter.toLocaleLowerCase().trim() ===
+                    category.toLocaleLowerCase().trim()
+                      ? "filled"
+                      : "stroke"
+                  }
                 />
               </NavLink>
             )}
