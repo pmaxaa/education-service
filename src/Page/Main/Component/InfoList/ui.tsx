@@ -17,9 +17,12 @@ const helpWrap = (
   );
 };
 
-export const InfoList = () => {
+interface InfoListProps {
+  theme?: "light" | "dark";
+}
+export const InfoList = ({ theme = "light" }: InfoListProps) => {
   return (
-    <section className="infoList">
+    <section className={"infoList" + " infoList_theme_" + theme}>
       <h2 className="infoList__header">Список общей информации о платформе</h2>
       <dl className="infoList__list">
         {helpWrap(

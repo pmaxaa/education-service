@@ -95,3 +95,16 @@
     gap: 10px;
   }
 }
+
+.infoList_theme_dark {
+  background-color: $blackColor;
+  .infoList__boldhead {
+    color: $lightBlueColor;
+  }
+  .infoList__head {
+    color: $whiteColor;
+  }
+  .infoList__discriptionItem {
+    color: $darkGreyColor;
+  }
+}
