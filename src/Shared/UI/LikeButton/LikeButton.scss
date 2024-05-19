@@ -1,0 +1,72 @@
+@import '../../Style/generalStyle.scss';
+
+.likeButton {
+	border: 2px solid;
+	background-color: $whiteColor;
+	position: relative;
+
+	&-default {
+		width: 88px;
+		height: 88px;
+		border-radius: 16px;
+		border-color: $blueDefaultColor;
+
+		&::before {
+			content: url('./assets/heart.svg');
+			width: 48px;
+			height: 48px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&:checked {
+			&::before {
+				content: url('./assets/filled-heart.svg');
+				width: 48px;
+				height: 48px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	&-small {
+		width: 44px;
+		height: 44px;
+		border-radius: 8px;
+
+		&.likeButton-light {
+			border-color: $lightBlueColor;
+		}
+
+		&.likeButton-dark {
+			border-color: $lavenderColor;
+		}
+
+		&::before {
+			content: url('./assets/heart-small.svg');
+			width: 24px;
+			height: 24px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
+		&:checked {
+			&::before {
+				content: url('./assets/filled-heart-small.svg');
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+}

@@ -10,6 +10,13 @@ a:link,
 a:visited {
 	text-decoration: none;
 }
+
+input[type='checkbox'] {
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+}
 //----------------------- Colors Variables --------------------------//
 
 $blueDefaultColor: rgba(44, 65, 255, 1);
