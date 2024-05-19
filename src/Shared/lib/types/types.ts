@@ -32,4 +32,5 @@ export type Teacher = {
 	name: string;
 	photo: string;
 	description: string;
+	category: string;
 };
