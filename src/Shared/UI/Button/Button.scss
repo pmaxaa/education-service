@@ -9,7 +9,7 @@
 	justify-content: center;
 	align-items: center;
 
-	&-stroke {
+	&-stroke-light {
 		border-color: $blueDefaultColor;
 		background-color: $whiteColor;
 		color: $indigoColor;
@@ -28,7 +28,27 @@
 		}
 	}
 
-	&-filled {
+	&-stroke-dark {
+		border-color: $lavenderColor;
+		background-color: $blackColor;
+		color: $lightBlueColor;
+
+		&:hover {
+			background-color: $darkestGreyColor;
+		}
+
+		&:active {
+			background-color: $lavenderColor;
+			color: $blackColor;
+		}
+
+		&:disabled {
+			border-color: $mediumGreyColor;
+			color: $mediumGreyColor;
+		}
+	}
+
+	&-filled-light {
 		background-color: $blueDefaultColor;
 		border-color: $blueDefaultColor;
 		color: $whiteColor;
@@ -48,6 +68,30 @@
 			background-color: $lightGreyColor;
 			border-color: $lightGreyColor;
 			color: $darkGreyColor;
+		}
+	}
+
+	&-filled-dark {
+		background-color: $lavenderColor;
+		border-color: $lavenderColor;
+		color: $blackColor;
+
+		&:hover {
+			background-color: $lightBlueColor;
+			border-color: $lightBlueColor;
+			color: $blackColor;
+		}
+
+		&:active {
+			background-color: $blueColor;
+			border-color: $blueColor;
+			color: $lightBlueColor;
+		}
+
+		&:disabled {
+			background-color: $darkestGreyColor;
+			border-color: $darkestGreyColor;
+			color: $greyColor;
 		}
 	}
 

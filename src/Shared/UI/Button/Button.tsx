@@ -10,6 +10,7 @@ interface anchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
 interface generalProps {
 	label: string;
 	theme?: 'stroke' | 'filled';
+	color_theme?: 'light' | 'dark';
 	size?: 'default' | 'large' | 'card' | 'header' | 'search'; //кнопки(ссылки) все разные на макете, сделала так, не знаю, как лучше. default - как кнопка "в каталог" под карточками, large - кнопка на обложке, card - кнопка карточки, header - кнопка в хедере, search - кнопки в поиске
 }
 
@@ -19,12 +20,19 @@ export default function Button({
 	tag = 'button',
 	theme = 'filled',
 	size = 'default',
+	color_theme = 'light',
 	label,
+	className,
 	...props
 }: ButtonProps) {
 	return React.createElement(
 		tag,
-		{ ...props, className: `button button-${theme} button-${size}` },
+		{
+			...props,
+			className: `button button-${theme}-${color_theme} button-${size} ${
+				className ? className : ''
+			}`,
+		},
 		label
 	);
 }
