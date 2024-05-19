@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import './style.scss'
 
-interface Props{
+interface Props extends React.InputHTMLAttributes<HTMLInputElement>{
     called: string,
-    id: string,
-    style: boolean,
+    darkStyle: boolean,
 }
 
 function FilterChosen({
     called = 'Бесплатно',
-    id="one",
-    style=true,
-}){
+    darkStyle=true,
+    className,
+    ...props
+}:Props){
+    const [isChecked, setIsChecked] = useState<boolean>(true);
+    const changeIsChecked = () =>{
+        if(isChecked){
+            setIsChecked(false)
+        }else{
+            setIsChecked(true)
+        }
+    }
     return(
-        <div className={ style? "filter dark" : "filter"}>
-                <input type='checkbox' id={id}/>
-                <label htmlFor={id}>{called}</label>
+        <div className={( darkStyle? "filter dark" : "filter")+(className? " " + className : "" )}>
+            <label className={isChecked ? "checked" : "unChecked"} htmlFor="1">
+                <input type='checkbox' id="1" onClick={changeIsChecked} {...props}/>
+            {called}</label>
         </div>
     )
 }

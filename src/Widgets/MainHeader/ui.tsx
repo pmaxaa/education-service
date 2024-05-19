@@ -31,6 +31,7 @@ export const MainHeader = ({ setTheme, ...props }: MainHeaderProps) => {
   ];
   return (
     <HeaderTemplate theme={props.theme} setTheme={setTheme}>
+      
       <SearchDropDown allCategories={allCategories} {...props} />
     </HeaderTemplate>
   );
