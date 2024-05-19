@@ -12,7 +12,6 @@ interface MainHeaderProps {
 export const MainHeader = ({ setTheme, ...props }: MainHeaderProps) => {
   // Здесь нужно получить все категории(направления или теги) из стейта. Пока заполнен от руки
   const allCategories = [
-    "Все курсы",
     "Программирование",
     "Английский",
     "Бизнес",

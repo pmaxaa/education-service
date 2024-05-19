@@ -1,0 +1,114 @@
+@import "../../../../Shared/Style/generalStyle.scss";
+
+.filter {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 32px;
+}
+
+.filter__head {
+  @include h6;
+  color: $indigoColor;
+}
+.filter__groupList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  max-width: 290px;
+  gap: 24px;
+}
+
+.filter__groupItem {
+}
+.filter__groupHead {
+  @include h7;
+  color: $blackColor;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.filter__fieldList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  gap: 8px;
+}
+.filter__fieldItem {
+}
+.filter__fieldInput {
+}
+.filter_theme_dark {
+  .filter__head {
+    color: $lightBlueColor;
+  }
+  .filter__groupHead {
+    color: $whiteColor;
+  }
+}
+
+.filter__head_small {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid $greyColor;
+  border-radius: 8px;
+  position: relative;
+  &::after,
+  &::before {
+    content: "";
+    transition: all 0.3s linear;
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    top: 50%;
+    right: 30px;
+    transform: translate(-50%, -50%);
+    background-color: $darkGreyColor;
+  }
+  &::before {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+.filter__head_open {
+  &::after,
+  &::before {
+    height: 3px;
+  }
+  &::after {
+    transform: translate(-32%, -50%) scale(0.7) rotate(45deg);
+  }
+  &::before {
+    transform: translate(-78%, -50%) scale(0.7) rotate(-45deg);
+  }
+}
+
+.filter__groupList_small {
+  background-color: $whiteColor;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: 2px solid $greyColor;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .filter {
+    padding: 10px;
+  }
+}
+
+.filter_theme_dark {
+  .filter__head_small {
+    background-color: $darkestGreyColor;
+  }
+  .filter__groupList_small {
+    background-color: $darkestGreyColor;
+  }
+}

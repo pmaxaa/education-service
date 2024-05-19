@@ -70,7 +70,51 @@ export const SearchDropDown = ({
     />
   );
   const dropdownBlockSlot = (
-    <ul className="searchDropDown__categoryList">
+    <ul
+      className={
+        "searchDropDown__categoryList" +
+        " searchDropDown__categoryList_theme_" +
+        theme
+      }
+    >
+      <li>
+        {location.pathname === "/catalog" ? (
+          <Button
+            theme={
+              InnerTextFilter.toLocaleLowerCase().trim() ===
+                "Все курсы".toLocaleLowerCase().trim() ||
+              InnerTextFilter.toLocaleLowerCase().trim() === ""
+                ? "filled"
+                : "stroke"
+            }
+            label={"Все курсы"}
+            size="search"
+            onClick={() => {
+              if (onClickCategory) onClickCategory("");
+            }}
+          />
+        ) : (
+          <NavLink
+            to={"/catalog"}
+            state={{
+              category: "",
+              textFilter: "",
+            }}
+          >
+            <Button
+              label={"Все курсы"}
+              size="search"
+              theme={
+                InnerTextFilter.toLocaleLowerCase().trim() ===
+                  "Все курсы".toLocaleLowerCase().trim() ||
+                InnerTextFilter.toLocaleLowerCase().trim() === ""
+                  ? "filled"
+                  : "stroke"
+              }
+            />
+          </NavLink>
+        )}
+      </li>
       {allCategories.map((category) => {
         return (
           <li key={category} className="searchDropDown__categoryItem">

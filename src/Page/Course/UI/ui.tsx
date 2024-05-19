@@ -15,7 +15,7 @@ export const CoursePage = () => {
   return (
     <>
       <MainHeader />
-      <main>CoursePage {id}</main>;
+      <main></main>;
     </>
   );
 };
