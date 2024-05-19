@@ -32,21 +32,25 @@ export const CatalogPage = () => {
       />
       <main className={"catalogPage__main catalogPage__main_theme_" + Theme}>
         <div className="catalogPage__mainWrap">
+          <div className="catalogPage__helpBlock"></div>
           <CategoriesList
             currentCategory={CurrentCategory}
             setCurrentCategory={setCurrentCategory}
             theme={Theme}
+            className="catalogPage__categoris"
           />
           <Filter
             theme={Theme}
             filterState={FilterState}
             setFilterState={setFilterState}
+            className="catalogPage__filter"
           />
           <CoursesList
             currentCategory={CurrentCategory}
             textFilter={TextFilter}
             filterState={FilterState}
             theme={Theme}
+            className="catalogPage__courses"
           />
         </div>
       </main>

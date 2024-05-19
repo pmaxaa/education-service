@@ -4,7 +4,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
   gap: 32px;
 }
@@ -27,5 +27,12 @@
   background-color: $blackColor;
   .CoursesList__info {
     color: $whiteColor;
+  }
+}
+
+@media (max-width: 1024px) {
+  .CoursesList__list {
+    padding: 0 10px;
+    justify-content: center;
   }
 }

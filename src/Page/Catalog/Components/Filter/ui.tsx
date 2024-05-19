@@ -40,7 +40,7 @@ export const Filter = ({
 
   useEffect(() => {
     const handleResize = () => {
-      setisSmallVersion(window.innerWidth <= 768 ? true : false);
+      setisSmallVersion(window.innerWidth <= 1024 ? true : false);
     };
     window.addEventListener("resize", handleResize);
     return () => {

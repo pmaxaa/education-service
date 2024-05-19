@@ -6,11 +6,13 @@ interface CategoriesListProps {
   theme?: "light" | "dark";
   currentCategory: string;
   setCurrentCategory: (v: string) => void;
+  className?: string;
 }
 export const CategoriesList = ({
   theme = "light",
   currentCategory,
   setCurrentCategory,
+  className,
 }: CategoriesListProps) => {
   // Здесь нужно получить все категории(направления или теги) из стейта. Пока заполнен от руки
   const allCategories = [
@@ -31,7 +33,14 @@ export const CategoriesList = ({
     "Другое",
   ];
   return (
-    <section className={"categoriesList" + " categoriesList_theme_" + theme}>
+    <section
+      className={
+        "categoriesList" +
+        " categoriesList_theme_" +
+        theme +
+        (className ? " " + className : "")
+      }
+    >
       <h1 className="categoriesList__head">
         {currentCategory === "" ? "Все курсы" : currentCategory}
       </h1>

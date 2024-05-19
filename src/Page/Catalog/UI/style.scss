@@ -6,12 +6,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 30px 80px;
 }
 .catalogPage__mainWrap {
   width: 100%;
   max-width: 1515px;
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 2fr;
+  grid-template-areas: "help  categoris" "filter courses";
+  gap: 80px;
 }
-
+.catalogPage__helpBlock {
+  grid-area: help;
+}
+.catalogPage__categoris {
+  grid-area: categoris;
+}
+.catalogPage__filter {
+  grid-area: filter;
+}
+.catalogPage__courses {
+  grid-area: courses;
+}
 .catalogPage__main_theme_dark {
   background-color: $blackColor;
+}
+
+@media (max-width: 1024px) {
+  .catalogPage__mainWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 }

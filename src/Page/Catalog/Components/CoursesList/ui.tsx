@@ -8,11 +8,13 @@ interface CoursesListProps {
   currentCategory: string;
   filterState: filterStateType;
   theme?: "light" | "dark";
+  className?: string;
 }
 export const CoursesList = ({
   textFilter,
   currentCategory,
   filterState,
+  className,
   theme = "light",
 }: CoursesListProps) => {
   const [Like, setLike] = useState<boolean>(false);
@@ -184,7 +186,13 @@ export const CoursesList = ({
     });
   };
   return (
-    <section className={"CoursesList CoursesList_theme_" + theme}>
+    <section
+      className={
+        "CoursesList CoursesList_theme_" +
+        theme +
+        (className ? " " + className : "")
+      }
+    >
       <p className="CoursesList__info">
         {(textFilter === ""
           ? "Найдено: "
