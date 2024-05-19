@@ -118,6 +118,7 @@ export const SearchDropDown = ({
       className="searchDropDown"
       mainBlockSlot={mainBlockSlot}
       dropdownBlockSlot={dropdownBlockSlot}
+      isNoOpeningWhenOnClick
       dropdownBlockParams={{
         style: {
           position: "absolute",
