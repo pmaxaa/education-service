@@ -1,0 +1,51 @@
+@import "../../../../Shared/Style/generalStyle.scss";
+
+.questionsList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 44px 0 88px;
+}
+.questionsList__wrap {
+  width: 100%;
+  max-width: 1515px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+.questionsList__head {
+  @include h2;
+  color: $indigoColor;
+}
+.questionsList__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+.questionsList__item {
+  width: 100%;
+}
+
+.questionsList_theme_dark {
+  .questionsList__head {
+    color: $lightBlueColor;
+  }
+}
+
+@media (max-width: 1024px) {
+  .questionsList__head {
+    @include h3;
+  }
+}
+@media (max-width: 768px) {
+  .questionsList__head {
+    @include h6;
+  }
+}

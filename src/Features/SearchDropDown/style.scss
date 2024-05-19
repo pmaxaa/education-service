@@ -1,0 +1,20 @@
+@import "../../Shared/Style/generalStyle.scss";
+
+.searchDropDown {
+}
+.searchDropDown__categoryList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: $whiteColor;
+  margin-top: 16px;
+  border: 2px solid $lavenderColor;
+  padding: 2rem;
+  border-radius: 16px;
+  gap: 8px;
+}
+.searchDropDown__categoryList_theme_dark {
+  background-color: $blackColor;
+}
