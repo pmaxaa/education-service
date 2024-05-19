@@ -7,6 +7,13 @@
     background-color: $blackColor;
     color: $whiteColor;
   }
+  .header__burger {
+    &::after,
+    &::before,
+    & .header__burger__helper {
+      background-color: $lightBlueColor;
+    }
+  }
 }
 .header {
   width: 100%;
@@ -240,6 +247,11 @@
   }
   .header__menu_active {
     transform: translateX(0);
+  }
+  .header_theme_dark {
+    .header__menu {
+      background-color: $blackColor;
+    }
   }
 }
 
