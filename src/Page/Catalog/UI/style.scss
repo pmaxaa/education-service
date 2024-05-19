@@ -1,0 +1,17 @@
+@import "../../../Shared/Style/generalStyle.scss";
+
+.catalogPage__main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.catalogPage__mainWrap {
+  width: 100%;
+  max-width: 1515px;
+}
+
+.catalogPage__main_theme_dark {
+  background-color: $blackColor;
+}
