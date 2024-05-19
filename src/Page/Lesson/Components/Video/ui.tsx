@@ -1,6 +1,6 @@
 import React from "react";
 import { MyVideo } from "../../../../Shared";
-
+import './style.scss'
 interface Props{
     id: string,
     LinkVideo: string,

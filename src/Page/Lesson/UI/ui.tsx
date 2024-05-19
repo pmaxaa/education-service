@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import ColumnLessons from "../Components/ColumnLessons/ui";
 import VideoLesson from "../Components/Video/ui";
-import './style.scss'
 import { HeaderTemplate } from "../../../Shared/UIKit/HeaderTemplate/ui";
 import { Consecutivelinks, FilterChosen } from "../../../Shared";
 interface lessonParams {
@@ -76,11 +75,29 @@ export const LessonPage = () => {
       return (item.id === id);
     })
   }
+  const menuLinks: {
+    title:string,
+    path: string,
+  }[]= [
+    {
+        title: "Название курса",
+        path: "/lesson/1"
+    },
+    {
+        title: "Название темы",
+        path: "/lesson/1"
+    },
+    {
+        title: "Название урока",
+        path: "/lesson/1"
+    }
+];
   const videoLessonItem = getVideoInfoItemById(numTask);
   return (
     <>
-          {/* <FilterChosen called="ahadf" darkStyle={false} checked /> */}
-          <Consecutivelinks theme={Theme} />
+        <HeaderTemplate theme={Theme} setTheme={setTheme} isWithMenu={false}>
+          <Consecutivelinks theme={Theme} menuLinks={menuLinks} />
+        </HeaderTemplate>
       <main>
         <div className="lessonPage">
           <ColumnLessons taskArr={taskArr} setTask={setNumTask} idCurrent={numTask} theme={Theme} />

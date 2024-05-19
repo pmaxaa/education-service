@@ -1,0 +1,29 @@
+@media (max-width: 1024px){
+    .our-video{
+        width: calc(100% - 300px);
+        position: relative;
+        .videoTitle{
+            margin-bottom: 20px;
+        }
+        .bs-video{
+            flex-direction: column;
+            gap: 20px;
+            .video-player{
+                width: 100% !important;
+                height: 300px !important;
+            }
+            .explainTask{
+                height: fit-content;
+                .teacher{
+                    position: absolute;
+                    bottom: 0px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 979px){ 
+    .our-video{
+        
+    }
+}

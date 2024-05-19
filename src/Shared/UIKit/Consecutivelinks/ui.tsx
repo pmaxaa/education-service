@@ -4,25 +4,9 @@ import React from 'react'
 
 interface Props {
     theme: "dark" | "light",
+    menuLinks: {title: string, path: string}[]
 }
 const Consecutivelinks = ({...props}:Props) =>{
-    const menuLinks: {
-        title:string,
-        path: string,
-    }[]= [
-        {
-            title: "Название курса",
-            path: "/lesson/1"
-        },
-        {
-            title: "Название темы",
-            path: "/lesson/1"
-        },
-        {
-            title: "Название урока",
-            path: "/lesson/1"
-        }
-    ];
     return(
         <nav className={ props.theme === "light"? "headerLesson" : "headerLesson dark"}>
             <ul>
@@ -34,7 +18,7 @@ const Consecutivelinks = ({...props}:Props) =>{
                     </NavLink>
                 </li>
                 {
-                    menuLinks.map((item) => {
+                    props.menuLinks.map((item) => {
                         return(
                             <>
                             <span>/</span>

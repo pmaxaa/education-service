@@ -1,6 +1,5 @@
-.filter{
+.filter-checkBox{
     width: fit-content;
-    padding: 50px;
     label{
         position: relative;
         cursor: pointer;
@@ -47,7 +46,7 @@
     }
 }
 
-.filter.dark{
+.filter-checkBox.dark{
     background-color: #333333;
     color: white;
     label{

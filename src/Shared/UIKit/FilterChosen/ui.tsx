@@ -3,12 +3,13 @@ import './style.scss'
 
 interface Props extends React.InputHTMLAttributes<HTMLInputElement>{
     called: string,
-    darkStyle: boolean,
+    theme: "dark" | "light" ,
+
 }
 
 function FilterChosen({
     called = 'Бесплатно',
-    darkStyle=true,
+    theme = "light",
     className,
     ...props
 }:Props){
@@ -21,7 +22,7 @@ function FilterChosen({
         }
     }
     return(
-        <div className={( darkStyle? "filter dark" : "filter")+(className? " " + className : "" )}>
+        <div className={( theme === "dark" ? "filter-checkBox dark" : "filter-checkBox")+(className? " " + className : "" )}>
             <label className={isChecked ? "checked" : "unChecked"} htmlFor="1">
                 <input type='checkbox' id="1" onClick={changeIsChecked} {...props}/>
             {called}</label>

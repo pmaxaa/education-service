@@ -15,10 +15,15 @@
             a{
                 color: #797979;
                 text-decoration: none;
+                &:hover{
+                    color: #333333;
+                }
             }
         }
     }
+    
 }
+
 .headerLesson.dark{
     a{
         &:hover{
