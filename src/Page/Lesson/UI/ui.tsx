@@ -3,6 +3,7 @@ import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import ColumnLessons from "../Components/ColumnLessons/ui";
 import VideoLesson from "../Components/Video/ui";
 import './style.scss'
+import { HeaderTemplate } from "../../../Shared/UIKit/HeaderTemplate/ui";
 interface lessonParams {
   id: string;
 }

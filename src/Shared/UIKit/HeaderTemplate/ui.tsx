@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./style.scss";
 import { Logo } from "../Logo/ui";
 import { DropDown } from "../DropDown/ui";
-import Button from "../../UI/Button/Button";
+import Button from "../Button/Button";
 
 interface HeaderTemplateProps {
   children: React.ReactNode | React.ReactNode[];
@@ -56,6 +56,7 @@ export const HeaderTemplate = ({
       <NavLink className={"header__logo"} to={"/"}>
         <Logo color={theme === "light" ? "white" : "rgba(51, 51, 51, 1)"} />
       </NavLink>
+      
       {isWithMenu && (
         <nav
           className={
@@ -75,6 +76,7 @@ export const HeaderTemplate = ({
           </ul>
         </nav>
       )}
+
       <div className="header__slot">{children}</div>
       <button
         className={"header__themeBtn"}

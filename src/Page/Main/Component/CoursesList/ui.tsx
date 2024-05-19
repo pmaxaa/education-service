@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./style.scss";
-import Button from "../../../../Shared/UI/Button/Button";
+import Button from "../../../../Shared/UIKit/Button/Button";
 import { NavLink } from "react-router-dom";
 import { CourseCard } from "../../../../Shared/UIKit/CourseCard/ui";
 

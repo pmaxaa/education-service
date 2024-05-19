@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
 import { NavLink } from "react-router-dom";
-import Button from "../../UI/Button/Button";
+import Button from "../Button/Button";
 
 interface CourseCardProps extends React.HTMLAttributes<HTMLElement> {
   name: string;

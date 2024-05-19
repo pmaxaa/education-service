@@ -3,7 +3,7 @@ import "./style.scss";
 import { DropDown } from "../../Shared/UIKit/DropDown/ui";
 import { Input } from "../../Shared/UIKit/Input/ui";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import Button from "../../Shared/UI/Button/Button";
+import Button from "../../Shared/UIKit/Button/Button";
 
 interface SearchDropDownProps {
   allCategories: string[];
