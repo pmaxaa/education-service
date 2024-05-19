@@ -1,0 +1,97 @@
+@import "../../../../Shared/Style/generalStyle.scss";
+
+.infoList {
+  position: relative;
+  width: 100%;
+  background-color: $whiteColor;
+  padding: 94px 0;
+  max-width: 1515px;
+}
+.infoList__header {
+  font-size: 0;
+}
+.infoList__list {
+  justify-content: center;
+  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 90px;
+  color: $darkGreyColor;
+}
+.infoList__itemWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 44px;
+}
+
+.infoList__headItem {
+  display: flex;
+  flex-direction: column;
+}
+.infoList__boldhead {
+  @include h1;
+  text-align: center;
+  color: $indigoColor;
+}
+.infoList__head {
+  @include h4;
+  text-align: center;
+  color: $blackColor;
+}
+.infoList__discriptionItem {
+  margin: 0;
+  @include p4;
+  text-align: center;
+  color: $darkGreyColor;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .infoList {
+    padding: 65px 0;
+  }
+  .infoList__list {
+    gap: 60px;
+  }
+  .infoList__boldhead {
+    @include h2;
+    text-align: center;
+  }
+  .infoList__head {
+    @include h5;
+    text-align: center;
+  }
+  .infoList__discriptionItem {
+    @include p6;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .infoList {
+    padding: 20px 0;
+  }
+  .infoList__boldhead {
+    @include h5;
+    text-align: center;
+  }
+  .infoList__head {
+    @include p7;
+    text-align: center;
+  }
+  .infoList__discriptionItem {
+    @include p10;
+    text-align: center;
+    max-width: 140px;
+  }
+
+  .infoList__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .infoList__itemWrap {
+    gap: 10px;
+  }
+}
