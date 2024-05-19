@@ -1,4 +1,5 @@
 .filter{
+    width: fit-content;
     input[type="checkbox"] {
         appearance: none;
         &:checked {
@@ -43,6 +44,15 @@
             left: -30px;
             top: -3px;
             border-radius: 4px;
+        }
+    }
+}
+.filter.dark{
+    background-color: #333333;
+    color: white;
+    label{
+        &::after{
+            background-color: #333333;
         }
     }
 }

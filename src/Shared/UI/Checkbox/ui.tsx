@@ -4,15 +4,17 @@ import './style.scss'
 interface CheckboxProps{
     name: string,
     time: string,
-    id: string
+    id: string,
+    style:boolean,
 }
 function Checkbox({
     name='Задание 1. Очень длинное название задания аж на 2 строчки',
     time='15 мин',
-    id='one'
+    id='one',
+    style=true
 }){
     return(
-        <div className="bs-box">
+        <div className={ style? "bs-box dark" : "bs-box"}>
             <div className='bs-icon'>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <circle cx="12" cy="12" r="11" stroke="#797979" stroke-width="2"/>

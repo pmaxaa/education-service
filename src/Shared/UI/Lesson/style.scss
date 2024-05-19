@@ -65,3 +65,14 @@
         }
     }
 }
+
+.lesson.dark{
+    background-color: #333333;
+    border-color: #797979;
+    color: #EAEAEA;
+    label{
+        &::after{
+            background-color: transparent;
+        }
+    }
+}

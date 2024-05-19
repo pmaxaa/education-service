@@ -123,3 +123,26 @@ $lightest-gray: #F5F5F5;
         }
     }
 }
+
+.bs-box.dark{
+    background-color: #333333;
+    color: white;
+    &:active{
+        .border-fake{
+            background-color: $blue-color;
+        }
+    }
+    &:hover{
+        .border-fake{
+            background-color: #333333;
+        }
+    }
+    &:hover:active{
+        .border-fake{
+            background-color: $blue-hover-color;
+        }
+    }
+    .border-fake{
+        background-color: #333333;
+    }
+}
