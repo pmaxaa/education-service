@@ -70,7 +70,13 @@ export const SearchDropDown = ({
     />
   );
   const dropdownBlockSlot = (
-    <ul className="searchDropDown__categoryList">
+    <ul
+      className={
+        "searchDropDown__categoryList" +
+        " searchDropDown__categoryList_theme_" +
+        theme
+      }
+    >
       {allCategories.map((category) => {
         return (
           <li key={category} className="searchDropDown__categoryItem">
