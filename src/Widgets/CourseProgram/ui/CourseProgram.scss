@@ -1,0 +1,57 @@
+@import '../../../Shared/Style/generalStyle.scss';
+
+.course-program {
+	background-color: inherit;
+	display: flex;
+	flex-direction: column;
+	gap: 44px;
+	align-items: center;
+	padding: 62px 202px 64px 202px;
+	p {
+		@include h4;
+		color: $blackColor;
+		display: inline-block;
+	}
+
+	h2 {
+		@include h2;
+	}
+
+	h3 {
+		@include h4;
+		margin-left: 33px;
+	}
+
+	.course-lessons {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	&-light {
+		h2 {
+			color: $indigoColor;
+		}
+
+		h3 {
+			color: $blackColor;
+		}
+	}
+
+	&-dark {
+		p {
+			padding: 28px 55px;
+			background-color: $lavenderColor;
+			border-radius: 16px;
+		}
+
+		h2 {
+			color: $lightBlueColor;
+		}
+
+		h3 {
+			color: $whiteColor;
+		}
+	}
+}
