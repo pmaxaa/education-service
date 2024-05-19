@@ -5,7 +5,6 @@ interface Props{
     id: string,
     LinkVideo: string,
     nameVideo: string,
-    // darkStyle: boolean,
     theme?: "light" | "dark"
 }
 

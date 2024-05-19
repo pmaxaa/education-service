@@ -27,9 +27,29 @@
     
 }
 
-@media (max-width: 979px){
-    
+@media (max-width: 800px){
+    .lessonPage{
+        flex-direction: column;
+        height: 135vh;
+    }
+    .columnLessons{
+        width: 100%;
+        height: 100px;
+    }
 }
-@media (max-width: 1024px){
-
+@media (max-width: 570px){
+    .lessonPage{
+        flex-direction: column;
+        height: 120vh;
+    }
+    .columnLessons{
+        width: 100%;
+        height: 100px;
+    }
+}
+@media (max-width: 480px){
+    .lessonPage{
+        flex-direction: column;
+        height: 110vh;
+    }
 }

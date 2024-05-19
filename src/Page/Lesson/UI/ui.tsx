@@ -3,7 +3,7 @@ import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import ColumnLessons from "../Components/ColumnLessons/ui";
 import VideoLesson from "../Components/Video/ui";
 import { HeaderTemplate } from "../../../Shared/UIKit/HeaderTemplate/ui";
-import { Consecutivelinks, FilterChosen } from "../../../Shared";
+import { Consecutivelinks } from "../../../Shared";
 interface lessonParams {
   id: string;
 }
@@ -75,6 +75,7 @@ export const LessonPage = () => {
       return (item.id === id);
     })
   }
+  // Здесь нужно вставить правильные пути, используя общий стать 
   const menuLinks: {
     title:string,
     path: string,
@@ -95,9 +96,9 @@ export const LessonPage = () => {
   const videoLessonItem = getVideoInfoItemById(numTask);
   return (
     <>
-        <HeaderTemplate theme={Theme} setTheme={setTheme} isWithMenu={false}>
-          <Consecutivelinks theme={Theme} menuLinks={menuLinks} />
-        </HeaderTemplate>
+      <HeaderTemplate theme={Theme} setTheme={setTheme} isWithMenu={false}>
+        <Consecutivelinks theme={Theme} menuLinks={menuLinks} />
+      </HeaderTemplate>
       <main>
         <div className="lessonPage">
           <ColumnLessons taskArr={taskArr} setTask={setNumTask} idCurrent={numTask} theme={Theme} />

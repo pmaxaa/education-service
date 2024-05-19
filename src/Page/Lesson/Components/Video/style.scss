@@ -22,8 +22,69 @@
         }
     }
 }
-@media (max-width: 979px){ 
+@media (max-width: 800px){
     .our-video{
-        
+        width: 100%;
+        height: calc(100% - 100px);
+        .videoTitle{
+            margin-bottom: 20px;
+            justify-content: center;
+            gap: 20px;
+        }
+        .bs-video{
+            .video-player{
+                width: 100% !important;
+                height: 400px !important;
+            }
+            .explainTask{
+                .task{
+                    h2{
+                        text-align: center;
+                    }
+                    p{
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 570px){
+    .our-video{
+        .bs-video{
+            .video-player{
+                height: 350px !important;
+            }
+        }
+    }
+}
+@media (max-width: 570px){
+    .our-video{
+        .bs-video{
+            .video-player{
+                height: 300px !important;
+            }
+        }
+    }
+}
+@media (max-width: 480px){
+    .our-video{
+        .bs-video{
+            .video-player{
+                height: 200px !important;
+            }
+            .explainTask{
+                .task{
+                    h2{
+                        line-height: 16px;
+                        font-size: 14px;
+                    }
+                    p{
+                        font-size: 12px;
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
     }
 }
