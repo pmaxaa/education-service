@@ -8,8 +8,8 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement>{
 }
 
 function FilterChosen({
-    called = 'Бесплатно',
-    theme = "light",
+    called,
+    theme,
     className,
     ...props
 }:Props){
@@ -23,8 +23,8 @@ function FilterChosen({
     }
     return(
         <div className={( theme === "dark" ? "filter-checkBox dark" : "filter-checkBox")+(className? " " + className : "" )}>
-            <label className={isChecked ? "checked" : "unChecked"} htmlFor="1">
-                <input type='checkbox' id="1" onClick={changeIsChecked} {...props}/>
+            <label className={props.checked ? "checked" : "unChecked"}>
+                <input type='checkbox' onClick={changeIsChecked} {...props}/>
             {called}</label>
         </div>
     )

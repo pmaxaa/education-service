@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.scss";
-import Button from "../../../../Shared/UI/Button/Button";
+import Button from "../../../../Shared/UIKit/Button/Button";
+// import Button from "../../../../Shared/UI/Button/Button";
 
 interface CategoriesListProps {
   theme?: "light" | "dark";
