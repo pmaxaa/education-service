@@ -45,6 +45,7 @@
   border: 2px solid $darkestGreyColor;
   &:hover {
     background-color: $darkestGreyColor;
+    border-color: $darkGreyColor;
   }
   .courseCard__name {
     color: $lightBlueColor;
