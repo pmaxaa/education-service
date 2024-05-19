@@ -1,0 +1,83 @@
+@import '../../Style/generalStyle.scss';
+
+.button {
+	border: 2px solid;
+	border-radius: 8px;
+	text-align: center;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&-stroke {
+		border-color: $blueDefaultColor;
+		background-color: $whiteColor;
+		color: $indigoColor;
+
+		&:hover {
+			background-color: $lightGreyColor;
+		}
+
+		&:active {
+			background-color: $lavenderColor;
+		}
+
+		&:disabled {
+			border-color: $greyColor;
+			color: $greyColor;
+		}
+	}
+
+	&-filled {
+		background-color: $blueDefaultColor;
+		border-color: $blueDefaultColor;
+		color: $whiteColor;
+
+		&:hover {
+			background-color: $blueHoveredColor;
+			border-color: $blueHoveredColor;
+		}
+
+		&:active {
+			background-color: $lavenderColor;
+			border-color: $lavenderColor;
+			color: $indigoColor;
+		}
+
+		&:disabled {
+			background-color: $lightGreyColor;
+			border-color: $lightGreyColor;
+			color: $darkGreyColor;
+		}
+	}
+
+	&-default {
+		@include h6;
+		width: 370px;
+		height: 74px;
+	}
+
+	&-card {
+		@include h9;
+		width: 187px;
+		height: 44px;
+	}
+
+	&-large {
+		@include h3;
+		width: 440px;
+		height: 88px;
+	}
+
+	&-header {
+		@include p8;
+		padding: 9px 16px;
+		width: fit-content;
+	}
+
+	&-search {
+		@include h9;
+		padding: 14px 16px;
+		width: fit-content;
+	}
+}

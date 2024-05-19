@@ -1,0 +1,49 @@
+@import "../../Style/generalStyle.scss";
+
+.input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 14px;
+}
+.input__title {
+  @include p7;
+  color: $blackColor;
+}
+.input__field {
+  width: 100%;
+  border-radius: 8px;
+  @include p7;
+  padding: 16px 20px 18px;
+  outline: 0;
+
+  &:focus {
+    border-color: $lavenderColor;
+  }
+}
+.input__field_theme_light {
+  border: 2px solid $greyColor;
+  caret-color: $blueDefaultColor;
+  color: $blackColor;
+  background-color: $whiteColor;
+  &:hover {
+    border-color: $darkGreyColor;
+  }
+  &::placeholder {
+    color: $greyColor;
+  }
+}
+.input__field_theme_dark {
+  border: 2px solid $darkGreyColor;
+  caret-color: $blueColor;
+  color: $whiteColor;
+  background-color: $blackColor;
+  &:hover {
+    border-color: $greyColor;
+  }
+  &::placeholder {
+    color: $darkGreyColor;
+  }
+}

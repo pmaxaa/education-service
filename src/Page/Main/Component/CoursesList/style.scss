@@ -1,0 +1,57 @@
+@import "../../../../Shared/Style/generalStyle.scss";
+
+.coursesList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $lightBlueColor;
+  padding: 44px 0 88px;
+}
+.coursesList__wrap {
+  width: 100%;
+  max-width: 1515px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+.coursesList__head {
+  @include h2;
+  color: $indigoColor;
+}
+.coursesList__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.coursesList__item {
+  margin: 0;
+}
+.coursesList__btn {
+  text-decoration: none;
+}
+
+.coursesList_theme_dark {
+  background-color: $darkestGreyColor;
+  .coursesList__head {
+    color: $lightBlueColor;
+  }
+}
+
+@media (max-width: 1024px) {
+  .coursesList__head {
+    @include h3;
+  }
+}
+@media (max-width: 768px) {
+  .coursesList__head {
+    @include h6;
+  }
+}

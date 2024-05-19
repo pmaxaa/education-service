@@ -1,0 +1,67 @@
+@import "../../../../Shared/Style/generalStyle.scss";
+
+.teachersList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 44px 0 88px;
+}
+.teachersList__wrap {
+  width: 100%;
+  max-width: 1515px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+.teachersList__head {
+  @include h2;
+  color: $indigoColor;
+}
+.teachersList__slider {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.teachersList__list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: fit-content;
+  gap: 20px;
+  transition: margin 1s ease;
+}
+.teachersList__item {
+  margin: 0;
+}
+.teachersList__sliderBtn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+}
+.teachersList__sliderBtn_next {
+  right: 0;
+}
+.teachersList__sliderBtn_prev {
+  left: 0;
+}
+
+.teachersList_theme_dark {
+  .teachersList__head {
+    color: $lightBlueColor;
+  }
+}
+
+@media (max-width: 1024px) {
+  .teachersList__head {
+    @include h3;
+  }
+}
+@media (max-width: 768px) {
+  .teachersList__head {
+    @include h6;
+  }
+}

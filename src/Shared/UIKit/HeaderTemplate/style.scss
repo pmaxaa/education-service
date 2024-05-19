@@ -1,0 +1,262 @@
+@import "../../Style/generalStyle.scss";
+
+.header_theme_dark {
+  background-color: $blackColor;
+  color: $whiteColor;
+  * {
+    background-color: $blackColor;
+    color: $whiteColor;
+  }
+  .header__burger {
+    &::after,
+    &::before,
+    & .header__burger__helper {
+      background-color: $lightBlueColor;
+    }
+  }
+}
+.header {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  padding: 15px;
+  position: relative;
+}
+.header_withoutMenu {
+}
+.header__logo {
+  grid-area: logo;
+  color: $blueDefaultColor;
+  display: none;
+}
+.header__menu {
+  grid-area: menu;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.header__menuList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.header__menuItem {
+  display: flex;
+}
+.header__menuBtn {
+  color: $darkGreyColor;
+  text-decoration: none;
+  @include p6;
+  padding: 10px;
+  text-wrap: nowrap;
+}
+.header__slot {
+  grid-area: slot;
+}
+.header__themeBtn {
+  grid-area: themeBtn;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 10px;
+  color: $blackColor;
+}
+.header__educationBtn {
+  grid-area: educationBtn;
+  text-decoration: none;
+}
+.header__notification {
+  grid-area: notification;
+  padding: 10px;
+  color: $blackColor;
+}
+.header__profile {
+  grid-area: profile;
+  width: 40px;
+  height: 40px;
+  @include p6;
+  text-decoration: none;
+  color: $blackColor;
+  background-color: $lightBlueColor;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__burger {
+  grid-area: burger;
+  display: none;
+  font-size: 0;
+  line-height: 0;
+  border: 0;
+  width: 36px;
+  height: 32px;
+  background-color: transparent;
+  padding: 0;
+  position: relative;
+  &::after,
+  &::before,
+  & .header__burger__helper {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: $blackColor;
+    position: absolute;
+    transform-origin: center;
+    transition: all 0.5s;
+  }
+  & .header__burger__helper {
+    transform: scale(1) translate(0, -50%);
+    top: 50%;
+  }
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
+}
+
+.header__burger_active {
+  border-color: transparent;
+  & .header__burger__helper {
+    transform: scale(0) translate(0, -50%);
+  }
+  &::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  &::after {
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(-45deg);
+  }
+}
+
+@mixin dropDownMenu {
+  margin-top: 1px;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  overflow: auto;
+  overscroll-behavior: contain;
+  flex-direction: column;
+  justify-content: start;
+  width: auto;
+  padding: 15px 10% 30px;
+  background-color: $lightBlueColor;
+  z-index: 1000;
+  border: 1px solid $lightGreyColor;
+  transform: translateX(-100%);
+  transition: all 0.5s;
+  &::-webkit-scrollbar {
+    height: 5px;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $lightBlueColor;
+    border-radius: 20px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $blueDefaultColor;
+    border-radius: 20px;
+  }
+}
+@media (min-width: 1440px) {
+  .header {
+    grid-template-columns: 40px 2fr 3fr auto auto auto auto;
+    grid-template-areas: "logo menu slot themeBtn educationBtn notification profile";
+  }
+  .header_withoutMenu {
+    grid-template-columns: 40px 1fr auto auto auto auto;
+    grid-template-areas: "logo slot themeBtn educationBtn notification profile";
+  }
+  .header__logo {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .header {
+    grid-template-columns: 40px 1fr 1fr auto auto auto auto;
+    grid-template-areas: "logo menu slot themeBtn educationBtn notification profile";
+  }
+  .header_withoutMenu {
+    grid-template-columns: 40px 1fr auto auto auto auto;
+    grid-template-areas: "logo slot themeBtn educationBtn notification profile";
+  }
+  .header__logo {
+    display: flex;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    grid-template-columns: 40px 1fr auto auto auto auto;
+    grid-template-areas:
+      "logo menu themeBtn educationBtn notification profile"
+      "slot slot slot slot slot slot";
+  }
+  .header__logo {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr auto auto auto auto;
+    grid-template-areas:
+      "burger themeBtn educationBtn notification profile"
+      "slot slot slot slot slot";
+  }
+  .header__burger {
+    display: flex;
+  }
+  .header__logo {
+    display: none;
+  }
+  .header_withoutMenu {
+    grid-template-areas:
+      "logo themeBtn educationBtn notification profile"
+      "slot slot slot slot slot";
+    .header__burger {
+      display: none;
+    }
+    .header__logo {
+      display: flex;
+    }
+  }
+
+  .header__menu {
+    justify-content: end;
+    padding-right: 7%;
+    @include dropDownMenu;
+  }
+  .header__menuList {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .header__menu_active {
+    transform: translateX(0);
+  }
+  .header_theme_dark {
+    .header__menu {
+      background-color: $blackColor;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .header {
+    padding: 5px;
+  }
+}
