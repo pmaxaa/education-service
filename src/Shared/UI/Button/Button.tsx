@@ -20,11 +20,17 @@ export default function Button({
 	theme = 'filled',
 	size = 'default',
 	label,
+	className,
 	...props
 }: ButtonProps) {
 	return React.createElement(
 		tag,
-		{ ...props, className: `button button-${theme} button-${size}` },
+		{
+			...props,
+			className: `button button-${theme} button-${size} ${
+				className ? className : ''
+			}`,
+		},
 		label
 	);
 }

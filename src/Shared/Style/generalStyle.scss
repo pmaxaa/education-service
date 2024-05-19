@@ -1,7 +1,14 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+a,
+a:hover,
+a:link,
+a:visited {
+	text-decoration: none;
 }
 //----------------------- Colors Variables --------------------------//
 
@@ -25,149 +32,149 @@ $lightBlueColor: rgba(227, 230, 255, 1);
 //----------------------------- Font face ------------------------------//
 
 @font-face {
-  font-family: Inter;
-  src: url("./Assets/Font/Inter/Inter-VariableFont_slnt\,wght.ttf");
+	font-family: Inter;
+	src: url('./Assets/Font/Inter/Inter-VariableFont_slnt\,wght.ttf');
 }
 
 //------------------------------- Typography Mixins -------------------------//
 
 @mixin h1 {
-  font-family: Inter;
-  font-size: 96px;
-  font-weight: 500;
-  line-height: 120px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 96px;
+	font-weight: 500;
+	line-height: 120px;
+	text-align: left;
 }
 @mixin h2 {
-  font-family: Inter;
-  font-size: 64px;
-  font-weight: 500;
-  line-height: 80px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 64px;
+	font-weight: 500;
+	line-height: 80px;
+	text-align: left;
 }
 @mixin h3 {
-  font-family: Inter;
-  font-size: 36px;
-  font-weight: 600;
-  line-height: 45px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 36px;
+	font-weight: 600;
+	line-height: 45px;
+	text-align: left;
 }
 @mixin h4 {
-  font-family: Inter;
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 40px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 40px;
+	text-align: left;
 }
 @mixin h5 {
-  font-family: Inter;
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 35px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 35px;
+	text-align: left;
 }
 @mixin h6 {
-  font-family: Inter;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 30px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	text-align: left;
 }
 @mixin h7 {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 25px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 25px;
+	text-align: left;
 }
 @mixin h8 {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+	text-align: left;
 }
 @mixin h9 {
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 17.5px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 17.5px;
+	text-align: left;
 }
 @mixin p1 {
-  font-family: Inter;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 45px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 45px;
+	text-align: left;
 }
 @mixin p2 {
-  font-family: Inter;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 35px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 35px;
+	text-align: left;
 }
 @mixin p3 {
-  font-family: Inter;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 30px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 30px;
+	text-align: left;
 }
 @mixin p4 {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 25px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 25px;
+	text-align: left;
 }
 @mixin p5 {
-  font-family: Inter;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 25px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 25px;
+	text-align: left;
 }
 @mixin p6 {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 20px;
+	text-align: left;
 }
 @mixin p7 {
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 20px;
+	text-align: left;
 }
 @mixin p8 {
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17.5px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17.5px;
+	text-align: left;
 }
 @mixin p9 {
-  font-family: Inter;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 15px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 15px;
+	text-align: left;
 }
 @mixin p10 {
-  font-family: Inter;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 12.5px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 10px;
+	font-weight: 400;
+	line-height: 12.5px;
+	text-align: left;
 }
 @mixin p11 {
-  font-family: Inter;
-  font-size: 8px;
-  font-weight: 400;
-  line-height: 10px;
-  text-align: left;
+	font-family: Inter;
+	font-size: 8px;
+	font-weight: 400;
+	line-height: 10px;
+	text-align: left;
 }
