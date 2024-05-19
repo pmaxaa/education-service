@@ -12,27 +12,51 @@ type LessonState = {
 	setLessons: (lessons: Lesson[]) => void;
 };
 
-const useGlobalStore = create<CourseState & LessonState>()(set => ({
-	courses: [],
-	lessons: [],
+type ThemeState = {
+	theme: 'light' | 'dark';
+	changeTheme: () => void;
+};
 
-	setCourses: courses => {
-		set(state => {
-			return {
-				...state,
-				courses,
-			};
-		});
-	},
+const useGlobalStore = create<CourseState & LessonState & ThemeState>()(
+	set => ({
+		courses: [],
+		lessons: [],
+		theme: 'light',
 
-	setLessons: lessons => {
-		set(state => {
-			return {
-				...state,
-				lessons,
-			};
-		});
-	},
-}));
+		setCourses: courses => {
+			set(state => {
+				return {
+					...state,
+					courses,
+				};
+			});
+		},
+
+		setLessons: lessons => {
+			set(state => {
+				return {
+					...state,
+					lessons,
+				};
+			});
+		},
+
+		changeTheme: () => {
+			set(state => {
+				if (state.theme === 'dark') {
+					return {
+						...state,
+						theme: 'light',
+					};
+				} else {
+					return {
+						...state,
+						theme: 'dark',
+					};
+				}
+			});
+		},
+	})
+);
 
 export default useGlobalStore;
