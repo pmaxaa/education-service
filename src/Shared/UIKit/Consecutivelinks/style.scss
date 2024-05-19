@@ -1,0 +1,29 @@
+.headerLesson{
+    height: 24px;
+    width: fit-content;
+    ul{
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        span{
+            margin: 0 5px 0 5px;
+            color: #797979;
+        }
+        li{
+            list-style: none;
+            a{
+                color: #797979;
+                text-decoration: none;
+            }
+        }
+    }
+}
+.headerLesson.dark{
+    a{
+        &:hover{
+            background-color: #333333;
+            color: #eee;
+        }
+    }
+}

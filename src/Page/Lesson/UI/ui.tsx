@@ -4,7 +4,7 @@ import ColumnLessons from "../Components/ColumnLessons/ui";
 import VideoLesson from "../Components/Video/ui";
 import './style.scss'
 import { HeaderTemplate } from "../../../Shared/UIKit/HeaderTemplate/ui";
-import { FilterChosen } from "../../../Shared";
+import { Consecutivelinks, FilterChosen } from "../../../Shared";
 interface lessonParams {
   id: string;
 }
@@ -79,7 +79,8 @@ export const LessonPage = () => {
   const videoLessonItem = getVideoInfoItemById(numTask);
   return (
     <>
-          <FilterChosen called="ahadf" darkStyle={false} checked />
+          {/* <FilterChosen called="ahadf" darkStyle={false} checked /> */}
+          <Consecutivelinks theme={Theme} />
       <main>
         <div className="lessonPage">
           <ColumnLessons taskArr={taskArr} setTask={setNumTask} idCurrent={numTask} theme={Theme} />
