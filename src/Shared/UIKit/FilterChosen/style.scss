@@ -1,0 +1,57 @@
+.filter-checkBox{
+    width: fit-content;
+    label{
+        position: relative;
+        cursor: pointer;
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        text-align: left;
+        &::before{
+            content: "";
+            width: 16px;
+            height: 16px;
+            border: 2px solid #C9C9C9;
+            position: absolute;
+            left: -30px;
+            top: -3px;
+            border-radius: 4px;
+        }
+        &::after{
+            font-family: 'Courier New', Courier, monospace ;
+            content: "\2713";
+            font-weight: 900;
+            background-color: #E3E6FF;
+            color: white;
+            width: 20px;
+            height: 20px;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0) rotate(360deg);
+            transition: 0.3s;
+            position: absolute;
+            left: -30px;
+            top: -3px;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            appearance: none;
+        }
+    }
+    label.checked::after{
+        transform: scale(1);
+    }
+}
+
+.filter-checkBox.dark{
+    background-color: #333333;
+    color: white;
+    label{
+        &::after{
+            background-color: #333333;
+        }
+    }
+}

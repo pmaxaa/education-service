@@ -1,0 +1,11 @@
+@import "../../../Shared/Style/generalStyle.scss";
+.mainPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.mainPage_theme_dark {
+  background-color: $blackColor;
+}

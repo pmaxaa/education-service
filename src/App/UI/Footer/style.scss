@@ -1,0 +1,62 @@
+@import "../../../Shared/Style/generalStyle.scss";
+
+.footer {
+  padding: 15px;
+  background-color: $blackColor;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 40px 1fr 2fr;
+  grid-template-areas: "logo solial copanyInfo";
+  gap: 30px;
+}
+
+.footer__logo {
+  grid-area: logo;
+}
+
+.footer__social {
+  grid-area: solial;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-direction: column;
+  padding: 0 3rem;
+  gap: 10px;
+}
+.footer__socialHeader {
+  display: flex;
+  @include p8;
+  color: $greyColor;
+}
+.footer__socialList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 16px;
+  color: $darkGreyColor;
+  * {
+    color: $darkGreyColor;
+  }
+}
+.footer__companyInfo {
+  grid-area: copanyInfo;
+  display: flex;
+  justify-content: center;
+  color: $greyColor;
+  flex-direction: column;
+  align-items: start;
+  @include p8;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 40px 1fr;
+    grid-template-areas:
+      "logo solial"
+      "copanyInfo copanyInfo";
+  }
+}

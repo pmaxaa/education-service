@@ -1,0 +1,47 @@
+@import "../../../../Shared/Style/generalStyle.scss";
+
+.categoriesList {
+  width: 100%;
+  background-color: $lightBlueColor;
+  border-radius: 16px;
+  padding: 66px 88px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 52px;
+}
+.categoriesList__head {
+  @include h1;
+  color: $indigoColor;
+}
+.categoriesList__categoryList {
+  width: 100%;
+  max-width: 813px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.categoriesList__categoryItemBtn_activ {
+  background-color: $lavenderColor;
+}
+
+.categoriesList_theme_dark {
+  background-color: $darkestGreyColor;
+  .categoriesList__head {
+    color: $lightBlueColor;
+  }
+}
+
+@media (max-width: 1024px) {
+  .categoriesList__head {
+    @include h2;
+  }
+}
+@media (max-width: 768px) {
+  .categoriesList__head {
+    @include h3;
+  }
+}
