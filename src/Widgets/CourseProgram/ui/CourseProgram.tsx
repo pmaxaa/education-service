@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
-import { useLessonsData } from '../lib/hooks/useLessonsData';
+import { Lesson } from '../../../Shared/lib/types/types';
 import './CourseProgram.scss';
 
 export default function CourseProgram({
-	courseId,
+	lessons,
 	color_theme = 'light',
 }: {
-	courseId: string;
+	lessons: Lesson[];
 	color_theme?: 'light' | 'dark';
 }) {
 	const [percentage, setPercentage] = useState<number | undefined>(undefined);
-	const lessons = useLessonsData(courseId);
 	useEffect(() => {
 		const completedLessons = lessons.filter(
 			lesson => lesson.completed === true
@@ -38,14 +37,14 @@ export default function CourseProgram({
 			<div className='course-lessons'>
 				{topics.map((topic, index) => {
 					return (
-						<div className='course-topic' key={index}>
+						<div className='course-topic' key={index + topic}>
 							<h3>
 								Тема №{index + 1}. {topic}
 							</h3>
 							{lessons
 								.filter(lesson => lesson.topic === topic)
 								.map(lesson => {
-									return <>lesson {lesson.title} </>;
+									return <div key={lesson.id}>lesson {lesson.title} </div>;
 								})}
 						</div>
 					);
