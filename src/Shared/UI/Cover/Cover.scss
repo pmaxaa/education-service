@@ -1,0 +1,35 @@
+@import '../../Style/generalStyle.scss';
+
+.cover {
+	color: $whiteColor;
+	width: 100%;
+	height: 904px;
+	background-color: $indigoColor;
+	background-image: url('./Assets/photo_main.jpg'),
+		linear-gradient(276.88deg, rgba(22, 31, 105, 0) 31.87%, #161f69 57.89%);
+
+	&-main {
+		.cover-content {
+			margin-left: 202px;
+		}
+	}
+
+	&-course {
+		.cover-content {
+			margin-left: 198px;
+		}
+	}
+
+	.cover-content {
+		width: 748px;
+		margin-top: 140px;
+	}
+
+	h1 {
+		@include h1;
+	}
+
+	p {
+		@include p1;
+	}
+}

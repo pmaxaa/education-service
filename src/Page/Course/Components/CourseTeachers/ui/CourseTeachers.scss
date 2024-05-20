@@ -1,0 +1,32 @@
+@import '../../../../../Shared/Style/generalStyle.scss';
+
+.course-teachers {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	align-items: center;
+	padding-top: 44px;
+	padding-bottom: 80px;
+
+	h2 {
+		@include h2;
+	}
+
+	&-light {
+		h2 {
+			color: $indigoColor;
+		}
+	}
+
+	&-dark {
+		background-color: $blackColor;
+		h2 {
+			color: $lightBlueColor;
+		}
+	}
+
+	.course-teachers-cards {
+		display: flex;
+		gap: 20px;
+	}
+}

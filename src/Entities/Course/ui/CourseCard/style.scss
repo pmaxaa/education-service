@@ -1,0 +1,56 @@
+@import '../../../../Shared/Style/generalStyle.scss';
+
+.courseCard {
+	width: 287px;
+	height: 287px;
+	border: 2px solid $lightBlueColor;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: start;
+	padding: 20px;
+	background-color: $whiteColor;
+	transition: all 0.2s linear;
+	background-image: url('./Assets/lineIllustration.svg');
+	background-repeat: no-repeat;
+	background-position: center 123px;
+	&:hover {
+		background-color: $lightGreyColor;
+	}
+}
+.courseCard__name {
+	@include h7;
+	color: $indigoColor;
+	width: 100%;
+}
+
+.courseCard__description {
+	flex-grow: 1;
+	@include p7;
+	color: $blackColor;
+	margin: 12px 0;
+}
+
+.courseCard__btns {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.courseCard_theme_dark {
+	background-color: $blackColor;
+	border: 2px solid $darkestGreyColor;
+	&:hover {
+		background-color: $darkestGreyColor;
+		border-color: $darkGreyColor;
+	}
+	.courseCard__name {
+		color: $lightBlueColor;
+	}
+	.courseCard__description {
+		color: $whiteColor;
+	}
+}

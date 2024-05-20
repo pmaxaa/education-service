@@ -1,0 +1,22 @@
+@import '../../../../../Shared/Style/generalStyle.scss';
+
+.course-questions {
+	padding: 44px 202px 100px 202px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 48px;
+
+	h2 {
+		@include h2;
+		color: $indigoColor;
+	}
+
+	&-dark {
+		background-color: $blackColor;
+
+		h2 {
+			color: $lightBlueColor;
+		}
+	}
+}
