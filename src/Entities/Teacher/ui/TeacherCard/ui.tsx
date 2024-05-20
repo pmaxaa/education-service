@@ -3,16 +3,16 @@ import './style.scss';
 
 interface TeacherCardProps extends React.HTMLAttributes<HTMLElement> {
 	name: string;
-	imgUrl?: string;
+	photo?: string;
 	description: string;
-	direction: string;
+	category: string;
 	theme?: 'light' | 'dark';
 }
 export const TeacherCard = ({
 	name,
-	imgUrl,
+	photo,
 	description,
-	direction,
+	category,
 	className,
 	theme = 'light',
 	...props
@@ -37,10 +37,10 @@ export const TeacherCard = ({
 				(className ? ' ' + className : '')
 			}
 		>
-			<div className='teacherCard__direction'>{direction}</div>
-			{imgUrl ? (
+			<div className='teacherCard__direction'>{category}</div>
+			{photo ? (
 				<img
-					src={imgUrl}
+					src={photo}
 					alt='Фото преподавателя'
 					className='teacherCard__img'
 					width={widthImg}

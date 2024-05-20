@@ -1,6 +1,3 @@
-//предполагаю, что пользователь один
-// основывалась на json файле с курсами, который скидывала Настя
-
 export type Lesson = {
 	id: string;
 	courseId: string;
@@ -10,7 +7,7 @@ export type Lesson = {
 	topic: string;
 	order: number;
 	completed: boolean;
-	link: string; //ссылка на видео
+	link: string;
 };
 
 export type Course = {
@@ -24,7 +21,7 @@ export type Course = {
 	format: 'самообучение' | 'с наставником';
 	status: 'пройден' | 'в процессе' | 'новый' | 'в избранном';
 	categories: string[];
-	questions: [{ question: string; answer: string }]; //для вопросов по курсу внизу страницы курса
+	questions: [{ question: string; answer: string }];
 };
 
 export type Teacher = {

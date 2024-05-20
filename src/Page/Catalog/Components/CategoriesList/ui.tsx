@@ -1,4 +1,5 @@
 import Button from '../../../../Shared/UIKit/Button/Button';
+import useGlobalStore from '../../../../Shared/lib/store/store';
 import './style.scss';
 
 interface CategoriesListProps {
@@ -13,24 +14,16 @@ export const CategoriesList = ({
 	setCurrentCategory,
 	className,
 }: CategoriesListProps) => {
-	// Здесь нужно получить все категории(направления или теги) из стейта. Пока заполнен от руки
-	const allCategories = [
-		'Программирование',
-		'Английский',
-		'Бизнес',
-		'Менеджмент',
-		'Инвестиции',
-		'Маркетинг',
-		'Психология',
-		'Инженерия',
-		'Аналитика',
-		'Дизайн',
-		'Игры',
-		'Здоровье',
-		'Текст',
-		'Финансы',
-		'Другое',
-	];
+	const { courses } = useGlobalStore();
+	const allCategories = courses.reduce((acc: string[], obj) => {
+		obj.categories.forEach(category => {
+			if (!acc.includes(category)) {
+				acc.push(category);
+			}
+		});
+		return acc;
+	}, []);
+
 	return (
 		<section
 			className={

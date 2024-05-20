@@ -1,7 +1,6 @@
 import { teachersURL } from '../../../Shared/lib/constants/constants';
 import { Teacher } from '../../../Shared/lib/types/types';
 
-//получить всеx учителей
 export const getAllTeachers = async () => {
 	const allTeachers = await fetch(`${teachersURL}/teachers`, {
 		method: 'GET',

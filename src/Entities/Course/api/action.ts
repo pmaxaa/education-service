@@ -1,7 +1,6 @@
 import { coursesURL } from '../../../Shared/lib/constants/constants';
 import { Course } from '../../../Shared/lib/types/types';
 
-//получить все курсы
 export const getAllCourses = async () => {
 	const allCourses = await fetch(`${coursesURL}/courses/`, {
 		method: 'GET',
@@ -19,7 +18,6 @@ export const getAllCourses = async () => {
 	return allCourses;
 };
 
-//получить курс по его id
 export const getCourseById = async (courseId: string) => {
 	const course = await fetch(`${coursesURL}/courses/${courseId}`, {
 		method: 'GET',
@@ -37,7 +35,6 @@ export const getCourseById = async (courseId: string) => {
 	return course;
 };
 
-//изменить у курса статус('новый'/'в процессе'/'пройден'/'в избранном') и значение поля favourite (добавить/убрать из избранного)
 export const changeCourse = async (
 	courseId: string,
 	favourite: boolean,

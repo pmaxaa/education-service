@@ -1,7 +1,6 @@
 import { coursesURL } from '../../../Shared/lib/constants/constants';
 import { Lesson } from '../../../Shared/lib/types/types';
 
-//получить все уроки курса по id курса
 export const getAllCourseLessons = async (courseId: string) => {
 	const allLessons = await fetch(`${coursesURL}/courses/${courseId}/lessons`, {
 		method: 'GET',
@@ -19,7 +18,6 @@ export const getAllCourseLessons = async (courseId: string) => {
 	return allLessons;
 };
 
-//получить урок по его id
 export const getLessonById = async (lessonId: string) => {
 	const lesson = await fetch(`${coursesURL}/lessons/${lessonId}`, {
 		method: 'GET',
@@ -37,7 +35,6 @@ export const getLessonById = async (lessonId: string) => {
 	return lesson;
 };
 
-//пометить урок как выполненный
 export const completeLesson = async (lessonId: string) => {
 	const lesson = await fetch(`${coursesURL}/lessons/${lessonId}`, {
 		method: 'PUT',

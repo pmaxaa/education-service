@@ -3,6 +3,7 @@ import { useLessonsData } from '../../../Entities/Lesson/lib/hooks/useLessonsDat
 import useGlobalStore from '../../../Shared/lib/store/store';
 import { MainHeader } from '../../../Widgets/MainHeader/ui';
 import CourseProgram from '../Components/CourseProgram/ui/CourseProgram';
+import CourseQuestions from '../Components/CourseQuestions/ui/CourseQuesstions';
 import CourseTeachers from '../Components/CourseTeachers/ui/CourseTeachers';
 
 interface courseParams {
@@ -12,7 +13,6 @@ export const courseLoader = ({ params }: LoaderFunctionArgs<courseParams>) => {
 	return params;
 };
 export const CoursePage = () => {
-	//получили id курса из адресной строки, потом в useEffect нужно будет подтянуть данные о курсе
 	const { theme, changeTheme } = useGlobalStore();
 	const { id } = useLoaderData() as courseParams;
 	const lessons = useLessonsData(id);
@@ -23,8 +23,8 @@ export const CoursePage = () => {
 			<main>
 				<CourseProgram lessons={lessons} color_theme={theme} />
 				<CourseTeachers lessons={lessons} color_theme={theme} />
+				<CourseQuestions courseId={id} theme={theme} />
 			</main>
-			;
 		</>
 	);
 };

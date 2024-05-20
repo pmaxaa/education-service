@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { Course, Lesson, Teacher } from '../types/types';
 
-//к вечеру будут функции для изменения статусов уроков и курсов ()
 type CourseState = {
 	courses: Course[];
 	setCourses: (courses: Course[]) => void;

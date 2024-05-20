@@ -1,6 +1,6 @@
+import { useCourseTeachersData } from '../../../../../Entities/Teacher/lib/hooks/useCourseTeachersData';
 import { TeacherCard } from '../../../../../Entities/Teacher/ui/TeacherCard/ui';
 import { Lesson } from '../../../../../Shared/lib/types/types';
-import { useCourseTeachersData } from '../lib/hooks/useCourseTeachersData';
 import './CourseTeachers.scss';
 
 export default function CourseTeachers({
@@ -21,8 +21,8 @@ export default function CourseTeachers({
 							<TeacherCard
 								name={teacher.name}
 								description={teacher.description}
-								direction={teacher.category}
-								imgUrl={teacher.photo}
+								category={teacher.category}
+								photo={teacher.photo}
 								theme={color_theme}
 							/>
 						</li>
