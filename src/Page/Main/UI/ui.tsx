@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import "./style.scss";
-import { MainHeader } from "../../../Widgets/MainHeader/ui";
-import { InfoList } from "../Component/InfoList/ui";
-import { CoursesList } from "../Component/CoursesList/ui";
-import { TeachersList } from "../Component/TeachersList/ui";
-import { QuestionsList } from "../Component/QuestionsList/ui";
+import useGlobalStore from '../../../Shared/lib/store/store';
+import { MainHeader } from '../../../Widgets/MainHeader/ui';
+import { CoursesList } from '../Component/CoursesList/ui';
+import { InfoList } from '../Component/InfoList/ui';
+import { QuestionsList } from '../Component/QuestionsList/ui';
+import { TeachersList } from '../Component/TeachersList/ui';
+import './style.scss';
 
 export const MainPage = () => {
-  const [Theme, setTheme] = useState<"light" | "dark">("light");
-  return (
-    <>
-      <MainHeader theme={Theme} setTheme={setTheme} />
-      <main className={"mainPage" + " mainPage_theme_" + Theme}>
-        <InfoList theme={Theme} />
-        <CoursesList theme={Theme} />
-        <TeachersList theme={Theme} />
-        <QuestionsList theme={Theme} />
-      </main>
-    </>
-  );
+	const { theme, changeTheme } = useGlobalStore();
+	return (
+		<>
+			<MainHeader theme={theme} setTheme={changeTheme} />
+			<main className={'mainPage mainPage_theme_' + theme}>
+				<InfoList theme={theme} />
+				<CoursesList theme={theme} />
+				<TeachersList theme={theme} />
+				<QuestionsList theme={theme} />
+			</main>
+		</>
+	);
 };

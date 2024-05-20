@@ -1,4 +1,5 @@
-import { Lesson } from '../../../Shared/lib/types/types';
+import { TeacherCard } from '../../../../../Entities/Teacher/ui/TeacherCard/ui';
+import { Lesson } from '../../../../../Shared/lib/types/types';
 import { useCourseTeachersData } from '../lib/hooks/useCourseTeachersData';
 import './CourseTeachers.scss';
 
@@ -13,11 +14,21 @@ export default function CourseTeachers({
 	return (
 		<section className={`course-teachers course-teachers-${color_theme}`}>
 			<h2>Преподаватели</h2>
-			<div className='course-teachers-cards'>
+			<ul className='course-teachers-cards'>
 				{teachers.map(teacher => {
-					return <div key={teacher.id}>{teacher.name}</div>;
+					return (
+						<li key={teacher.id}>
+							<TeacherCard
+								name={teacher.name}
+								description={teacher.description}
+								direction={teacher.category}
+								imgUrl={teacher.photo}
+								theme={color_theme}
+							/>
+						</li>
+					);
 				})}
-			</div>
+			</ul>
 		</section>
 	);
 }

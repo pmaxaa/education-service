@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getAllTeachers } from '../../../../Entities/Teacher/api/action';
-import useGlobalStore from '../../../../Shared/lib/store/store';
-import { Lesson, Teacher } from '../../../../Shared/lib/types/types';
+import { getAllTeachers } from '../../../../../../Entities/Teacher/api/action';
+import useGlobalStore from '../../../../../../Shared/lib/store/store';
+import { Lesson, Teacher } from '../../../../../../Shared/lib/types/types';
 
 export function useCourseTeachersData(lessons: Lesson[]) {
 	const { teachers, setTeachers } = useGlobalStore();

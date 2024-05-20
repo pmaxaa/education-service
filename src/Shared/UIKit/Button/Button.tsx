@@ -11,7 +11,7 @@ interface generalProps {
 	label: string;
 	theme?: 'stroke' | 'filled';
 	color_theme?: 'light' | 'dark';
-	size?: 'default' | 'large' | 'card' | 'header' | 'search'; //кнопки(ссылки) все разные на макете, сделала так, не знаю, как лучше. default - как кнопка "в каталог" под карточками, large - кнопка на обложке, card - кнопка карточки, header - кнопка в хедере, search - кнопки в поиске
+	size?: 'default' | 'large' | 'card' | 'header' | 'search';
 }
 
 type ButtonProps = generalProps & (buttonProps | anchorProps);

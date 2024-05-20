@@ -1,16 +1,16 @@
-@import '../../../Shared/Style/generalStyle.scss';
+@import '../../../../../Shared/Style/generalStyle.scss';
 
 .course-program {
-	background-color: inherit;
 	display: flex;
 	flex-direction: column;
 	gap: 44px;
 	align-items: center;
 	padding: 62px 202px 64px 202px;
-	p {
+	.course-progress {
 		@include h4;
 		color: $blackColor;
 		display: inline-block;
+		padding: 28px 55px;
 	}
 
 	h2 {
@@ -20,6 +20,7 @@
 	h3 {
 		@include h4;
 		margin-left: 33px;
+		margin-bottom: 18px;
 	}
 
 	.course-lessons {
@@ -27,6 +28,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: 40px;
+	}
+
+	.course-topic-lessons {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
 	}
 
 	&-light {
@@ -40,8 +47,8 @@
 	}
 
 	&-dark {
-		p {
-			padding: 28px 55px;
+		background-color: $blackColor;
+		.course-progress {
 			background-color: $lavenderColor;
 			border-radius: 16px;
 		}

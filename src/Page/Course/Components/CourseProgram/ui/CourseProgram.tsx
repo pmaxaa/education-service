@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Lesson } from '../../../Shared/lib/types/types';
+import LessonCard from '../../../../../Entities/Lesson/ui/LessonCard/ui';
+import { Lesson } from '../../../../../Shared/lib/types/types';
 import './CourseProgram.scss';
 
 export default function CourseProgram({
@@ -31,25 +32,35 @@ export default function CourseProgram({
 	}, []);
 
 	return (
-		<div className={`course-program course-program-${color_theme}`}>
+		<section className={`course-program course-program-${color_theme}`}>
 			<p className='course-progress'>Пройдено {percentage}% курса</p>
 			<h2>Программа курса</h2>
-			<div className='course-lessons'>
+			<ul className='course-lessons'>
 				{topics.map((topic, index) => {
 					return (
-						<div className='course-topic' key={index + topic}>
+						<li className='course-topic' key={index + topic}>
 							<h3>
 								Тема №{index + 1}. {topic}
 							</h3>
-							{lessons
-								.filter(lesson => lesson.topic === topic)
-								.map(lesson => {
-									return <div key={lesson.id}>lesson {lesson.title} </div>;
-								})}
-						</div>
+							<ul className='course-topic-lessons'>
+								{lessons
+									.filter(lesson => lesson.topic === topic)
+									.map(lesson => {
+										return (
+											<li key={lesson.id}>
+												<LessonCard
+													name={lesson.title}
+													id={lesson.id}
+													theme={color_theme}
+												/>
+											</li>
+										);
+									})}
+							</ul>
+						</li>
 					);
 				})}
-			</div>
-		</div>
+			</ul>
+		</section>
 	);
 }

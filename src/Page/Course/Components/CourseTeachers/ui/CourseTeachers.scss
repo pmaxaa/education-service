@@ -1,4 +1,4 @@
-@import '../../../Shared/Style/generalStyle.scss';
+@import '../../../../../Shared/Style/generalStyle.scss';
 
 .course-teachers {
 	display: flex;
@@ -19,6 +19,7 @@
 	}
 
 	&-dark {
+		background-color: $blackColor;
 		h2 {
 			color: $lightBlueColor;
 		}
