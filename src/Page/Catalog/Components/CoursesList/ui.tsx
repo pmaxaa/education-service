@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { CourseCard } from '../../../../Entities/Course/ui/CourseCard/ui';
 import useGlobalStore from '../../../../Shared/lib/store/store';
 import { filterStateType } from '../Filter/ui';
@@ -18,7 +17,6 @@ export const CoursesList = ({
 	className,
 	theme = 'light',
 }: CoursesListProps) => {
-	const [Like, setLike] = useState<boolean>(false);
 	const { courses } = useGlobalStore();
 
 	const filterCoursesItem = () => {
@@ -65,11 +63,23 @@ export const CoursesList = ({
 				return false;
 			}
 
-			if (
-				filterState.status.length !== 0 &&
-				!filterState.status.includes(course.status)
-			) {
-				return false;
+			if (filterState.status.length !== 0) {
+				for (let k = 0; k < filterState.status.length; k++) {
+					if (
+						filterState.status[k] === 'пройден' &&
+						course.status !== 'пройден'
+					)
+						return false;
+					if (
+						filterState.status[k] === 'в процессе' &&
+						course.status !== 'в процессе'
+					)
+						return false;
+					if (filterState.status[k] === 'новый' && course.status !== 'новый')
+						return false;
+					if (filterState.status[k] === 'в избранном' && !course.favourite)
+						return false;
+				}
 			}
 
 			if (
@@ -101,11 +111,11 @@ export const CoursesList = ({
 						<li key={course.id} className='CoursesList__item'>
 							{
 								<CourseCard
-									title={course.title}
-									description={course.description}
-									favourite={course.favourite}
-									//setIsLike={setLike}
-									id={course.id}
+									{...course}
+									isSelected={
+										course.status === 'в процессе' ||
+										course.status === 'пройден'
+									}
 									theme={theme}
 								/>
 							}
