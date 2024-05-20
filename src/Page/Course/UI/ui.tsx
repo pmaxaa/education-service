@@ -1,9 +1,9 @@
 import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
+import { useLessonsData } from '../../../Entities/Lesson/lib/hooks/useLessonsData';
 import useGlobalStore from '../../../Shared/lib/store/store';
 import { MainHeader } from '../../../Widgets/MainHeader/ui';
 import CourseProgram from '../Components/CourseProgram/ui/CourseProgram';
 import CourseTeachers from '../Components/CourseTeachers/ui/CourseTeachers';
-import { useLessonsData } from '../lib/hooks/useLessonsData';
 
 interface courseParams {
 	id: string;

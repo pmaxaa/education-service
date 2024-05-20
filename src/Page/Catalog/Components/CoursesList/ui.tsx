@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CourseCard } from '../../../../Entities/Course/ui/CourseCard/ui';
+import useGlobalStore from '../../../../Shared/lib/store/store';
 import { filterStateType } from '../Filter/ui';
 import './style.scss';
 
@@ -18,115 +19,10 @@ export const CoursesList = ({
 	theme = 'light',
 }: CoursesListProps) => {
 	const [Like, setLike] = useState<boolean>(false);
-	// Здесь нужно подтянуть все курсы из стейта
-	const coursesItemList: {
-		id: string;
-		title: string;
-		description: string;
-		favourite: boolean;
-		cost: 'бесплатно' | 'платно';
-		level: 'новичкам' | 'продвинутым' | 'специалистам';
-		duration_months: number;
-		format: 'самообучение' | 'с наставником';
-		status: 'пройден' | 'в процессе' | 'новый' | 'в избранном';
-		categories: string[];
-		questions: [{ question: string; answer: string }];
-	}[] = [
-		{
-			id: '1',
-			title: '1Название направления',
-			description: '1Краткое описание того, чем занимаются на направлении',
-			favourite: Like,
-			cost: 'бесплатно',
-			level: 'специалистам',
-			duration_months: 18,
-			format: 'с наставником',
-			status: 'новый',
-			categories: ['Дизайн'],
-			questions: [{ question: '', answer: '' }],
-		},
-		{
-			id: '2',
-			title: '2Название направления',
-			description: '2Краткое описание того, чем занимаются на направлении',
-			favourite: Like,
-			cost: 'платно',
-			level: 'новичкам',
-			duration_months: 2,
-			format: 'самообучение',
-			status: 'пройден',
-			categories: ['Игры'],
-			questions: [{ question: '', answer: '' }],
-		},
-		{
-			id: '3',
-			title: '3Название направления',
-			description: '3Краткое описание того, чем занимаются на направлении',
-			favourite: Like,
-			cost: 'бесплатно',
-			level: 'новичкам',
-			duration_months: 4,
-			format: 'с наставником',
-			status: 'в процессе',
-			categories: ['Игры'],
-			questions: [{ question: '', answer: '' }],
-		},
-		{
-			id: '4',
-			title: '4Название направления',
-			description: '4Краткое описание того, чем занимаются на направлении',
-			favourite: Like,
-			cost: 'платно',
-			level: 'новичкам',
-			duration_months: 18,
-			format: 'самообучение',
-			status: 'в избранном',
-			categories: ['Игры'],
-			questions: [{ question: '', answer: '' }],
-		},
-		{
-			id: '5',
-			title: '5Название направления',
-			description: '5Краткое описание того, чем занимаются на направлении',
-			favourite: Like,
-			cost: 'бесплатно',
-			level: 'специалистам',
-			duration_months: 1,
-			format: 'самообучение',
-			status: 'новый',
-			categories: ['Игры'],
-			questions: [{ question: '', answer: '' }],
-		},
-		{
-			id: '6',
-			title: '6Название направления',
-			description: '6Краткое описание того, чем занимаются на направлении',
-			favourite: Like,
-			cost: 'платно',
-			level: 'новичкам',
-			duration_months: 13,
-			format: 'самообучение',
-			status: 'пройден',
-			categories: ['Игры'],
-			questions: [{ question: '', answer: '' }],
-		},
-		{
-			id: '7',
-			title: '7Название направления',
-			description: '7Краткое описание того, чем занимаются на направлении',
-			favourite: Like,
-			cost: 'платно',
-			level: 'специалистам',
-			duration_months: 5,
-			format: 'самообучение',
-			status: 'в избранном',
-			categories: ['Игры'],
-			questions: [{ question: '', answer: '' }],
-		},
-	];
+	const { courses } = useGlobalStore();
 
 	const filterCoursesItem = () => {
-		return coursesItemList.filter(course => {
+		return courses.filter(course => {
 			if (
 				currentCategory !== '' &&
 				!course.categories.includes(currentCategory)
@@ -205,11 +101,11 @@ export const CoursesList = ({
 						<li key={course.id} className='CoursesList__item'>
 							{
 								<CourseCard
-									name={course.title}
+									title={course.title}
 									description={course.description}
-									isLike={course.favourite}
-									setIsLike={setLike}
-									idCourse={course.id}
+									favourite={course.favourite}
+									//setIsLike={setLike}
+									id={course.id}
 									theme={theme}
 								/>
 							}

@@ -4,21 +4,21 @@ import Button from '../../../../Shared/UIKit/Button/Button';
 import './style.scss';
 
 interface CourseCardProps extends React.HTMLAttributes<HTMLElement> {
-	name: string;
+	title: string;
 	description: string;
 	isSelected?: boolean;
-	idCourse: string;
-	isLike: boolean;
-	setIsLike: (v: boolean) => void;
+	id: string;
+	favourite: boolean;
+	//setIsLike: (v: boolean) => void;
 	theme?: 'light' | 'dark';
 }
 export const CourseCard = ({
-	name,
+	title,
 	description,
 	className,
-	isLike,
-	idCourse,
-	setIsLike,
+	favourite,
+	id,
+	//setIsLike,
 	isSelected = false,
 	theme,
 	...props
@@ -32,10 +32,10 @@ export const CourseCard = ({
 				(className ? ' ' + className : '')
 			}
 		>
-			<h3 className='courseCard__name'>{name}</h3>
+			<h3 className='courseCard__name'>{title}</h3>
 			<p className='courseCard__description'>{description}</p>
 			<div className='courseCard__btns'>
-				<NavLink to={'/course/' + idCourse} className={'courseCard__link'}>
+				<NavLink to={'/course/' + id} className={'courseCard__link'}>
 					{isSelected ? (
 						<Button
 							label='Вы участник'
@@ -52,12 +52,8 @@ export const CourseCard = ({
 						/>
 					)}
 				</NavLink>
-				<button
-					onClick={() => {
-						setIsLike(!isLike);
-					}}
-				>
-					{isLike ? (
+				<button onClick={() => {}}>
+					{favourite ? (
 						<svg
 							width='20'
 							height='19'
