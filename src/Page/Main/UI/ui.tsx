@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import Cover from '../../../Shared/UI/Cover/Cover';
 import Button from '../../../Shared/UIKit/Button/Button';
+import Cover from '../../../Shared/UIKit/Cover/Cover';
 import useGlobalStore from '../../../Shared/lib/store/store';
 import { MainHeader } from '../../../Widgets/MainHeader/ui';
 import { CoursesList } from '../Component/CoursesList/ui';

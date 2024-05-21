@@ -13,25 +13,24 @@ interface CourseCardProps extends React.HTMLAttributes<HTMLElement> {
 	isSelected?: boolean;
 	id: string;
 	status: Course['status'];
-	favourite: boolean;
+	favorite: boolean;
 	theme?: 'light' | 'dark';
 }
 export const CourseCard = ({
 	title,
 	description,
 	className,
-	favourite,
+	favorite,
 	id,
 	status,
 	isSelected = false,
 	theme,
-	...props
 }: CourseCardProps) => {
 	const { editCourse } = useGlobalStore();
 
 	const handleLikeChange = () => {
 		const likeCourse = async () => {
-			const newCourse = await changeCourse(id, !favourite, status);
+			const newCourse = await changeCourse(id, !favorite, status);
 			if (newCourse) {
 				if (newCourse instanceof Error)
 					console.log(`Editing course error: ${newCourse.message}`, 'error');
@@ -40,13 +39,11 @@ export const CourseCard = ({
 				}
 			}
 		};
-
 		likeCourse();
 	};
 
 	return (
 		<article
-			{...props}
 			className={
 				'courseCard' +
 				(' courseCard_theme_' + theme) +
@@ -76,7 +73,7 @@ export const CourseCard = ({
 				<LikeButton
 					color_theme={theme}
 					button_size='small'
-					isLiked={favourite}
+					isLiked={favorite}
 					onChange={handleLikeChange}
 				/>
 			</div>

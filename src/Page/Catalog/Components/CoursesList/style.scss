@@ -1,38 +1,37 @@
-@import "../../../../Shared/Style/generalStyle.scss";
+@import '../../../../Shared/Style/generalStyle.scss';
 
 .CoursesList {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 32px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	gap: 32px;
 }
 .CoursesList__info {
-  @include p7;
-  color: $blackColor;
+	@include p7;
+	color: $blackColor;
 }
 .CoursesList__list {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: start;
-  align-items: start;
-  gap: 20px;
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: start;
+	align-items: start;
+	gap: 20px;
 }
-.CoursesList__item {
-}
+
 .CoursesList_theme_dark {
-  background-color: $blackColor;
-  .CoursesList__info {
-    color: $whiteColor;
-  }
+	background-color: $blackColor;
+	.CoursesList__info {
+		color: $whiteColor;
+	}
 }
 
 @media (max-width: 1024px) {
-  .CoursesList__list {
-    padding: 0 10px;
-    justify-content: center;
-  }
+	.CoursesList__list {
+		padding: 0 10px;
+		justify-content: center;
+	}
 }

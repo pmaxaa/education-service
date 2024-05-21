@@ -77,7 +77,7 @@ export const CoursesList = ({
 						return false;
 					if (filterState.status[k] === 'новый' && course.status !== 'новый')
 						return false;
-					if (filterState.status[k] === 'в избранном' && !course.favourite)
+					if (filterState.status[k] === 'в избранном' && !course.favorite)
 						return false;
 				}
 			}

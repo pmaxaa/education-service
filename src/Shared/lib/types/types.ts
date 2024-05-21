@@ -14,7 +14,7 @@ export type Course = {
 	id: string;
 	title: string;
 	description: string;
-	favourite: boolean;
+	favorite: boolean;
 	cost: 'бесплатно' | 'платно';
 	level: 'новичкам' | 'продвинутым' | 'специалистам';
 	duration_months: number;

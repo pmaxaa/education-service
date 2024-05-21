@@ -20,7 +20,14 @@ export const CoursesList = ({ theme = 'light' }: CoursesListProps) => {
 					{newCourses.map(course => {
 						return (
 							<li key={course.title} className='coursesList__item'>
-								<CourseCard {...course} theme={theme} />
+								<CourseCard
+									{...course}
+									isSelected={
+										course.status === 'в процессе' ||
+										course.status === 'пройден'
+									}
+									theme={theme}
+								/>
 							</li>
 						);
 					})}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import useGlobalStore from '../../../Shared/lib/store/store';
 import { MainHeader } from '../../../Widgets/MainHeader/ui';
 import { CategoriesList } from '../Components/CategoriesList/ui';
@@ -8,9 +7,6 @@ import { Filter, filterStateType } from '../Components/Filter/ui';
 import './style.scss';
 
 export const CatalogPage = () => {
-	const location = useLocation();
-	console.log('CatalogPage state', location.state);
-
 	const [CurrentCategory, setCurrentCategory] = useState<string>('');
 	const [TextFilter, setTextFilter] = useState<string>('');
 	const { theme, changeTheme } = useGlobalStore();

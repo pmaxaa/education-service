@@ -1,0 +1,65 @@
+@import '../../Style/generalStyle.scss';
+
+.cover {
+	color: $whiteColor;
+	width: 100%;
+	height: 904px;
+	background-color: $indigoColor;
+	padding-top: 140px;
+
+	&-main {
+		.cover-content {
+			margin-left: 202px;
+			height: 648px;
+		}
+
+		background-image: linear-gradient(
+				276.88deg,
+				rgba(22, 31, 105, 0) 31.87%,
+				#161f69 57.89%
+			),
+			url('./Assets/photo_main.jpg');
+	}
+
+	&-course {
+		.cover-content {
+			margin-left: 198px;
+			height: 567px;
+		}
+
+		.cover-buttons {
+			display: flex;
+			gap: 16px;
+		}
+
+		background-image: linear-gradient(
+				276.88deg,
+				rgba(22, 31, 105, 0) 31.87%,
+				#161f69 57.89%
+			),
+			url('./Assets/photo_course.jpg');
+
+		background-position: 0, right;
+		background-repeat: no-repeat, no-repeat;
+	}
+
+	.cover-content {
+		width: 748px;
+		display: flex;
+		flex-direction: column;
+
+		.cover-buttons {
+			margin-top: auto;
+		}
+	}
+
+	h1 {
+		@include h1;
+		margin-bottom: 44px;
+	}
+
+	p {
+		@include p1;
+		margin-bottom: 44px;
+	}
+}

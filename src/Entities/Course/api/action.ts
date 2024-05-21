@@ -37,14 +37,14 @@ export const getCourseById = async (courseId: string) => {
 
 export const changeCourse = async (
 	courseId: string,
-	favourite: boolean,
+	favorite: boolean,
 	newStatus: Course['status']
 ) => {
 	const course = await fetch(`${coursesURL}/courses/${courseId}`, {
 		method: 'PUT',
 		headers: { 'content-type': 'application/json' },
 		body: JSON.stringify({
-			favourite: favourite,
+			favorite: favorite,
 			status: newStatus,
 		}),
 	})
