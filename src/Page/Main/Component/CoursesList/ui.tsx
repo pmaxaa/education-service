@@ -20,7 +20,7 @@ export const CoursesList = ({ theme = 'light' }: CoursesListProps) => {
 					{newCourses.map(course => {
 						return (
 							<li key={course.title} className='coursesList__item'>
-								<CourseCard {...course} />
+								<CourseCard {...course} theme={theme} />
 							</li>
 						);
 					})}
