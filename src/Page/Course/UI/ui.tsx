@@ -1,5 +1,4 @@
 import { LoaderFunctionArgs, useLoaderData } from 'react-router-dom';
-import { useLessonsData } from '../../../Entities/Lesson/lib/hooks/useLessonsData';
 import useGlobalStore from '../../../Shared/lib/store/store';
 import { MainHeader } from '../../../Widgets/MainHeader/ui';
 import CourseProgram from '../Components/CourseProgram/ui/CourseProgram';
@@ -15,7 +14,10 @@ export const courseLoader = ({ params }: LoaderFunctionArgs<courseParams>) => {
 export const CoursePage = () => {
 	const { theme, changeTheme } = useGlobalStore();
 	const { id } = useLoaderData() as courseParams;
-	const lessons = useLessonsData(id);
+
+	const lessons = useGlobalStore(state =>
+		state.lessons.filter(lesson => lesson.courseId === id)
+	);
 
 	return (
 		<>

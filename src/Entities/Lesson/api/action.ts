@@ -18,6 +18,23 @@ export const getAllCourseLessons = async (courseId: string) => {
 	return allLessons;
 };
 
+export const getAllLessons = async () => {
+	const allLessons = await fetch(`${coursesURL}/lessons`, {
+		method: 'GET',
+		headers: { 'content-type': 'application/json' },
+	})
+		.then(response => {
+			if (response.ok) {
+				return response.json() as Promise<Lesson[]>;
+			} else throw new Error(response.status + ' ' + response.statusText);
+		})
+		.then(lessons => {
+			return lessons;
+		})
+		.catch(error => error as Error);
+	return allLessons;
+};
+
 export const getLessonById = async (lessonId: string) => {
 	const lesson = await fetch(`${coursesURL}/lessons/${lessonId}`, {
 		method: 'GET',

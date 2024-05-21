@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import useGlobalStore from '../../../../Shared/lib/store/store';
-import { getAllCourseLessons } from '../../api/action';
+import { getAllLessons } from '../../api/action';
 
-export function useLessonsData(courseId: string) {
-	const { lessons, setLessons } = useGlobalStore();
+export function useLessonsData() {
+	const { setLessons } = useGlobalStore();
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await getAllCourseLessons(courseId);
+			const response = await getAllLessons();
 			if (response) {
 				if (response instanceof Error) {
 					console.log(`Lessons fetching error: ${response.message}`, 'error');
@@ -14,7 +14,5 @@ export function useLessonsData(courseId: string) {
 			}
 		};
 		fetchData();
-	}, [setLessons, courseId]);
-
-	return lessons;
+	}, [setLessons]);
 }
